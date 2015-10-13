@@ -13,7 +13,7 @@ describe('gnaApiServices', function() {
 		inject(function(_$httpBackend_, _$rootScope_, _gnaApiService_) {
 	 		$rootScope = _$rootScope_;
 			gnaApiService = _gnaApiService_;
-			spyOn($rootScope, '$broadcast').andCallThrough();
+			spyOn($rootScope, '$broadcast').and.callThrough();
 			// Set up the mock http service responses
      		$httpBackend = _$httpBackend_;
 		});

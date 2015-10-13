@@ -1,7 +1,7 @@
 # Nodejs App that serves an Angular SPA
 ================================================
 
-TEMA 5
+TEMA 11
 Angular course
 
 # Technologies:
@@ -11,5 +11,4 @@ Angular course
 
 # Description:
 
- * This project is an Angular app that contains the apps developed for the previous exarcises in a SPA
- * It is a Container of gnas.
+ * This project is an Angular app that ....

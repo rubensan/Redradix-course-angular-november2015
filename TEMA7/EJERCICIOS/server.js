@@ -32,7 +32,9 @@ app.set('view engine', 'html');
 app.use(cookieParser())
 
 // bodyParser should be above methodOverride
-app.use(bodyParser());
+// configure body-parser
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(methodOverride());
 
 //routes should be at the last

@@ -16,7 +16,7 @@ describe('topnavbar', function() {
 			scope.$digest();
 
 			// Spying on the broadcasting to test if we listen the events correctly
-	        spyOn($rootScope, '$broadcast').andCallThrough();
+	        spyOn($rootScope, '$broadcast').and.callThrough();
 		});
 	});
   
