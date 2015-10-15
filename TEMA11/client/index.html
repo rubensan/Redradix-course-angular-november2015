@@ -4,66 +4,48 @@
     <head lang="es">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <base href=""/>
-        <title>Redradix-AngularJS</title>
-        <meta name="description" content="Redradix-AngularJS">
-        <meta name="viewport" content="width=device-width">
+        <base href="/">
+        <title>Angular Course</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="">
 
-        <!-- CSS BOOTSTRAP -->
-        <link rel="stylesheet" href="styles/vendor/bootstrap.css">
 
-        <!-- CSS GNAs -->
-        <link rel="stylesheet" href="styles/gnas.css">
-        <link rel="stylesheet" href="styles/custom-navbar.css">
+        <!-- APP CSS -->
+        <link rel="stylesheet" href="styles/app.css">
         <link rel="stylesheet" href="styles/content.css">
         <link rel="stylesheet" href="styles/footer.css">
-            <!-- MODULE DIRECTIVES -->
-            <link rel="stylesheet" href="modules/directive/css/gna.css">
-
  
-        <!-- CSS FONT -->
-        <!-- AWESOME -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" href="bower_components/font-awesome-animation/dist/font-awesome-animation.min.css">
-        <!-- DBOOM -->
-        <link rel="stylesheet" href="custom-font/css/fontello.css">
+        <!-- APP MODULES-->
+            <!-- HOME MODULE -->
+            <link rel="stylesheet" href="modules/home/css/home.css">
+            <!-- PRODUCTS MODULE -->
+            <link rel="stylesheet" href="modules/products/css/products.css">
+
     </head>
 
-    <body ng-app="gnasApp">
+    <body ng-app="app">
 
-        <topnavbar></topnavbar>
-        <content></content>
-        <foot></foot>
+        <div ui-view></div>
         
         <script src="scripts/vendor/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   
-        <!-- GNAs SCRIPTS-->
-        <script src="scripts/gnas.js"></script>
+        <!-- APP SCRIPTS-->
+        <script src="scripts/app.js"></script>
         <script src="scripts/directives.js"></script>
         <!-- -->      
 
-         <!-- GNAs MODULES-->
-         <!-- UILOGIC MODULE-->
-        <script src="modules/uilogic/scripts/gna.js"></script>
-        <script src="modules/uilogic/scripts/controllers.js"></script>
-
-        <!-- DIRECTIVE MODULE-->
-        <script src="modules/directive/scripts/gna.js"></script>
-        <script src="modules/directive/scripts/directives.js"></script>
-
-        <!-- SERVICE MODULE-->
-        <script src="modules/service/scripts/gna.js"></script>
-        <script src="modules/service/scripts/directives.js"></script>
-        <script src="modules/service/scripts/services.js"></script>
-        
-        <!-- -->      
-         <!-- API MODULE-->
-        <script src="modules/api/scripts/gna.js"></script>
-        <script src="modules/api/scripts/directives.js"></script>
-        <script src="modules/api/scripts/services.js"></script>
-        <!-- -->      
+        <!-- APP MODULES-->
+            <!-- SERVICE MODULE-->
+            <script src="modules/home/scripts/home.js"></script>
+            <script src="modules/home/scripts/directives.js"></script>
+            <!-- -->      
+             <!-- API MODULE-->
+            <script src="modules/products/scripts/products.js"></script>
+            <script src="modules/products/scripts/directives.js"></script>
+            <script src="modules/products/scripts/services.js"></script>
+            <!-- -->      
 
     </body>
 
