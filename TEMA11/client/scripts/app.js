@@ -1,25 +1,60 @@
 'use strict';
 
-angular.module('app', [
+var app = angular.module('app', [
 	'ui.router',
 	'home',
 	'products'
-])
-.config(
+]);
+
+app.config(
   [ '$stateProvider', '$urlRouterProvider', '$locationProvider',
     function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
 		/////////////////////////////
 		// Redirects and Otherwise //
 		/////////////////////////////
- 		
- 		$locationProvider.html5Mode(true);
 
-		// Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
-		$urlRouterProvider
-			.when('/', '/home')
-        	.otherwise('/');	// If the url is ever invalid, e.g. '/asdf', then redirect to '/' aka the home state
+		// Example of using function rule as param
+	    $urlRouterProvider.otherwise(function($injector, $location){
+	        return '/' + $location.path();
+	    });
 
+		$stateProvider
+	    
+	    //////////////////////////
+		// State Configurations //
+		//////////////////////////
+	    
+	    .state('404', {
+	    	url: '/{path:.*}',
+	        template: '<page-not-found></page-not-found>'
+	    })
+
+		$locationProvider.html5Mode(true); 
     }
   ]
 );
+
+app.directive('navbar', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/navbar.html'
+  };
+});
+
+app.directive('footer', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/footer.html'
+  };
+});
+
+app.directive('pageNotFound', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/page-not-found.html',
+    controller: function($scope, $state, $location) {
+        $scope.pageNotFound = 'http://' + $location.host() + $location.port() + '/' + $state.params.path;
+    }
+  };
+});

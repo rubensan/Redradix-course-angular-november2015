@@ -12,7 +12,6 @@
 
         <!-- APP CSS -->
         <link rel="stylesheet" href="styles/app.css">
-        <link rel="stylesheet" href="styles/content.css">
         <link rel="stylesheet" href="styles/footer.css">
  
         <!-- APP MODULES-->
@@ -25,15 +24,16 @@
 
     <body ng-app="app">
 
+        <navbar></navbar>
         <div ui-view></div>
-        
+        <footer></footer>
+
         <script src="scripts/vendor/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   
         <!-- APP SCRIPTS-->
         <script src="scripts/app.js"></script>
-        <script src="scripts/directives.js"></script>
         <!-- -->      
 
         <!-- APP MODULES-->

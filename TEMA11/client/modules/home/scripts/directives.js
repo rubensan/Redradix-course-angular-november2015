@@ -1,8 +1,8 @@
 var homeDirecives = angular.module('homeDirecives', []);  
 
-homeDirecives.directive('home', function($interval) {
+homeDirecives.directive('home', function() {
   return {
     restrict: 'E',
-    templateUrl:  'home.html'
+    templateUrl: 'modules/home/views/home.html'
   };
 });

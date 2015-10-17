@@ -2,9 +2,7 @@ var products = angular.module('products', ['productsDirectives']);
 
 products.config(function($stateProvider, $urlRouterProvider) {
 
-	$urlRouterProvider.when('/products', '/products/index');
-	$urlRouterProvider.when('/products/', '/products/index');
-	$urlRouterProvider.otherwise('/products');
+	$urlRouterProvider.when('/products/', '/products');
 
 	$stateProvider
 	    
@@ -13,18 +11,17 @@ products.config(function($stateProvider, $urlRouterProvider) {
 		//////////////////////////
 	    
         .state('products', {
-        	abstract: false,
+        	abstract: true,
         	url: '/products',
 			template: '<products></products>' // This is the 'Web Component' Products
         })	
         	// Nested Views
         	.state('products.list', {
-	        	url: '/index',
+	        	url: '',
 				template: '<index></index>' // This is the 'Web Component' Products Index
         	})
         	.state('products.open', {
 	        	url: '/:productName',
 				template: '<product></product>'	// This is the 'Web Component' Product
         	})
-
 })

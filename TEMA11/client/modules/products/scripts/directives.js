@@ -5,8 +5,8 @@ productsDirectives.directive('products', function(Products, $q) {
     restrict: 'E',
     templateUrl: 'modules/products/views/products.html',
     controller: function($scope) {
-      Products.list().then(function(products) {
-        $scope.products = products;
+      Products.list().then(function(productsList) {
+        $scope.productsList = productsList;
       }, function(reason) {
         alert('Failed: ' + reason);
       });     
@@ -14,10 +14,10 @@ productsDirectives.directive('products', function(Products, $q) {
   };
 });
 
-productsDirectives.directive('productsNavbar', function() {
+productsDirectives.directive('index', function() {
   return {
     restrict: 'E',
-    templateUrl: 'modules/products/views/products-navbar.html'
+    templateUrl: 'modules/products/views/index.html'
   };
 });
 
@@ -28,8 +28,6 @@ productsDirectives.directive('product', function($state, Products) {
     controller: function($scope) {
       Products.open($state.params.productName).then(function(product) {
         $scope.product = product;
-      }, function(reason) {
-        alert('Failed: ' + reason);
       });
     }
   };

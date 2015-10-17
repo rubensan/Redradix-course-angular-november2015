@@ -1,6 +1,6 @@
 var productsServices = angular.module('productsServices', []);
 
-productsServices.factory('Products', function ($http, $q){
+productsServices.factory('Products', function ($http, $q, $state, $location){
 	
 	var productsList;
 	var products;
@@ -17,7 +17,7 @@ productsServices.factory('Products', function ($http, $q){
 		list: function(){
 			var deferred = $q.defer();
 			// This is mocking a db request by getting the info from a json static file on client side
-			$http({ method: 'GET', url: '/data/productsListList.json' })
+			$http({ method: 'GET', url: '/data/productsList.json' })
 				.then(function successCallback(response) { 
 					productsList = response.data.productsList;
 					deferred.resolve(productsList);                     
@@ -33,13 +33,15 @@ productsServices.factory('Products', function ($http, $q){
 				.then(function successCallback(response) { 
 					products = response.data.products;
 					var product = auxiliaryServiceFinder(productName);
-					if (product == -1) { deferred.reject("Ups, the page you’re looking for can’t be found."); } // This would be a 404, because the products are actually there.
+					if (product == -1) {
+						var path = $location.path();
+						$state.go('products.list', { path: path });
+					}
 					else { deferred.resolve(product); }
 			  	}, function errorCallback(response) {
-			  		deferred.reject("Ups, the page you’re looking for can’t be found."); // Lets supose a 404 not found
+			  		$state.go('products.list'); // Lets supose a 404 not found
 				});
 			return deferred.promise;
 		}
 	}
-
 });
