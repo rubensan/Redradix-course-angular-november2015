@@ -1,3 +1,16 @@
-<div id="fixed-navbar">THIS IS PRODUCTS FIXED NAVBAR</div>
+<div class="custom-menu-wrapper">
+    <div class="pure-menu custom-menu custom-menu-top">
+        <a ui-sref="products.list" class="pure-menu-heading custom-menu-brand">Products</a>
+        <a href="#" class="custom-menu-toggle x" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+    </div>
+    <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom" id="tuckedMenu">
+        <div class="custom-menu-screen"></div>
+        <ul class="pure-menu-list">
+            <li ng-repeat="product in productsList" class="pure-menu-item">
+				<a class="pure-menu-link" ui-sref="products.open({ productName: product.name })">{{ product.name }}</a>
+            </li>
+        </ul>
+    </div>
+</div>
 <div ui-view></div>
 
