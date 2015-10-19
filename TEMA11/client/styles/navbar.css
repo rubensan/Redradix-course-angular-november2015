@@ -1,0 +1,4 @@
+#navbar { color: black; background: rgba(242,242,242,0.6); padding: 1em 1.25em; height: 5%; }
+#brand { width: 15%; float: left; margin-left: 3%; }
+#sections-links { width: 80%; }
+h3.inline { float:right; margin-right: 3%; }

@@ -5,7 +5,6 @@ var app = angular.module('app', [
 	'home',
 	'products'
 ]);
-
 app.config(
   [ '$stateProvider', '$urlRouterProvider', '$locationProvider',
     function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -34,21 +33,18 @@ app.config(
     }
   ]
 );
-
 app.directive('navbar', function() {
   return {
     restrict: 'E',
     templateUrl: 'views/navbar.html'
   };
 });
-
 app.directive('footer', function() {
   return {
     restrict: 'E',
     templateUrl: 'views/footer.html'
   };
 });
-
 app.directive('pageNotFound', function() {
   return {
     restrict: 'E',

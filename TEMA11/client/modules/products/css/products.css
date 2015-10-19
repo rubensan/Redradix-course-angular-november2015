@@ -1,0 +1,23 @@
+#products-index-container { margin: 4em 4em 4em 4em; text-align: center; }
+
+/****
+ Nav
+*****/
+
+#products-navbar { border-bottom: solid 2px rgba(242,242,242,0.6); margin-bottom: 3%; overflow-x: scroll; white-space: nowrap; background: rgba(255,255,255,0.9); }
+#products-navbar a { transition: all .7s ease-in-out; display: block; color: #fff; text-decoration: none; }
+#products-navbar a:link { color: black; }
+#products-navbar a:visited { color: black; }
+#products-navbar a:hover { color: #58ACFA;  }
+#products-navbar a:focus { color: #58ACFA; }
+#products-navbar li { width: auto; margin-right: 5%; display: inline-block; /* if ie7 support needed */ *display: inline; zoom: 1; }
+.navbar-active { position:fixed; top:0; width:95%; left:2.5%; }
+
+/************
+ Wide styles
+************/
+
+@media (min-width: 42em) { 
+	#products-navbar { border-bottom: solid 1px }
+	.navbar-active { width:100%; left:0; }
+}
