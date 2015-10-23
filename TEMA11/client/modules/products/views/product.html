@@ -1,14 +1,7 @@
-<div class="container">
+<div class="product-container">
 	<h1 class="title">{{ product.name }}</h1>
-	<p> {{product.description }} </p>
-	<p><img class="img-responsive" src="http://placehold.it/800x350" alt=""></p>
-	<p> {{product.description }} </p>
-	<p><img class="img-responsive" src="http://placehold.it/800x350" alt=""></p>
-	<p> {{product.description }} </p>
-	<p><img class="img-responsive" src="http://placehold.it/800x350" alt=""></p>
-	<p> {{product.description }} </p>
-	<p><img class="img-responsive" src="http://placehold.it/800x350" alt=""></p>
-	<h2 class="title">Technical specifications</h2>
-	<h4 class="title">Design</h4>
-	<p>{{ product.technicalSpecs }}</p>
+	<div ng-repeat="descriptiveElement in product.descriptions">
+		<descriptive-element info="descriptiveElement"></descriptive-element>
+	</div>
+	<technical-specifications info="product.technicalSpecs"></technical-specifications>
 </div>

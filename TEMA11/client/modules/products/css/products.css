@@ -1,10 +1,23 @@
 #products-index-container { margin: 4em 4em 4em 4em; text-align: center; }
 
+/********
+ Product 
+********/
+.product-container { }
+.descriptive-element { padding: 4.5em 3em 4.5em 3em; }
+.descriptive-element { height: 250px; height: auto; }
+.descriptive-subelement-wrapper.left { width: 100%; }
+.descriptive-subelement-wrapper.right { width: 100%; }
+.descriptive-subelement { margin-bottom: 5%; }
+.technical-specifications-container { padding: 1.5em 0.5em 1.5em 0.5em; }
+.technical-specs-section { margin-top: 2%; }
+table.technical-specs-table { margin-top: 2%; }
+
 /****
  Nav
 *****/
 
-#products-navbar { border-bottom: solid 2px rgba(242,242,242,0.6); margin-bottom: 3%; overflow-x: scroll; white-space: nowrap; background: rgba(255,255,255,0.9); }
+#products-navbar { padding: 0em 1.5em 0em 1.5em; border-bottom: solid 2px rgba(242,242,242,0.6); margin-bottom: 3%; overflow-x: scroll; white-space: nowrap; background: rgba(255,255,255,0.9); }
 #products-navbar a { transition: all .7s ease-in-out; display: block; color: #fff; text-decoration: none; }
 #products-navbar a:link { color: black; }
 #products-navbar a:visited { color: black; }
@@ -13,11 +26,25 @@
 #products-navbar li { width: auto; margin-right: 5%; display: inline-block; /* if ie7 support needed */ *display: inline; zoom: 1; }
 .navbar-active { position:fixed; top:0; width:95%; left:2.5%; }
 
-/************
- Wide styles
-************/
+/***************
+ Responsiveness
+***************/
 
+/* Wide screens */
 @media (min-width: 42em) { 
 	#products-navbar { border-bottom: solid 1px }
 	.navbar-active { width:100%; left:0; }
+	.descriptive-element { height: 250px; }
+	.descriptive-subelement-wrapper { position:relative; top:50%; transform:translateY(-50%); }
+	.descriptive-subelement-wrapper.left { float:left; width: 48%;  }
+	.descriptive-subelement-wrapper.right { float:right; margin-left: 3%; width: 48%;  }
+	.descriptive-subelement-wrapper.center { margin-left: 20%; width: 60%;  }
+	.technical-specifications-container { padding: 4.5em 3.5em 4.5em 3.5em; }
 }
+
+/* Table for small screens */
+@media screen and (max-width: 600px) {
+	.technical-specs-section { margin-top: 6%; }
+	table.technical-specs-table { margin-top: 5%; }
+}
+

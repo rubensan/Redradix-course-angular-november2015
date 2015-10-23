@@ -1,102 +1,220 @@
 {
-	"products": [
-		{
-			"id": 0,
+    "products": [
+        {
+            "id": 0,
             "name": "product0",
-            "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+            "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+            "descriptions": [
+                { "type": "text-image",
+                  "background": "#F03B4A",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "image-text",
+                  "background": "#FFFFFF",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text",
+                  "background": "#E7E9BB",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>"
+                },
+                { "type": "image",
+                  "background": "#FFFFFF",
+                  "image":"http://placehold.it/800x350"}
+            ],
             "technicalSpecs": {
-                "DESIGN": {
-                    "Device type": "Smart phone",
-                    "OS": "PopupiOS (9.x, 8.x, 7.x)",
-                    "Dimensions": "4.87 x 2.31 x 0.30 inches (123.8 x 58.6 x 7.6 mm)",
-                    "Weight": "3.95 oz (112 g)",
-                    "Materials": "Main body: aluminum"
-                }
-            }
-		},
-		{
-			"id": 1,
-            "name": "product1",
-            "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
-            "technicalSpecs": {
-                "DESIGN": {
-                    "Device type": "Smart phone",
-                    "OS": "PopupiOS (9.x, 8.x, 7.x)",
-                    "Dimensions": "4.87 x 2.31 x 0.30 inches (123.8 x 58.6 x 7.6 mm)",
-                    "Weight": "3.95 oz (112 g)",
-                    "Materials": "Main body: aluminum"
-                }
-            }
-    	},
-    	{
-			"id": 2,
-            "name": "product2",
-            "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
-            "technicalSpecs": {
-                "DESIGN": {
-                    "Device type": "Smart phone",
-                    "OS": "PopupiOS (9.x, 8.x, 7.x)",
-                    "Dimensions": "4.87 x 2.31 x 0.30 inches (123.8 x 58.6 x 7.6 mm)",
-                    "Weight": "3.95 oz (112 g)",
-                    "Materials": "Main body: aluminum"
-                }
-            }
-    	},
-    	{
-			"id": 3,
-            "name": "product3",
-            "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
-            "technicalSpecs": {
-                "DESIGN": {
-                    "Device type": "Smart phone",
-                    "OS": "PopupiOS (9.x, 8.x, 7.x)",
-                    "Dimensions": "4.87 x 2.31 x 0.30 inches (123.8 x 58.6 x 7.6 mm)",
-                    "Weight": "3.95 oz (112 g)",
-                    "Materials": "Main body: aluminum"
+                "design": {
+                    "type": "Tablet",
+                    "OS": "PopupiOS (7.x)",
+                    "dimensions": "8.87 x 5.31 x 1.10 inches (523.8 x 128.6 x 9.6 mm)",
+                    "weight": "6.95 oz (112 g)",
+                    "materials": "Main body: crystal"
                 }
             }
         },
-    	{
-			"id": 4,
+        {
+            "id": 1,
+            "name": "product1",
+            "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+            "descriptions": [
+                { "type": "text-image",
+                  "background": "rgba(112, 36, 44, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "image-text",
+                  "background": "rgba(255, 255, 255, 1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text-image",
+                  "background": "#F03B4A",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                }
+            ],
+            "technicalSpecs": {
+                "design": {
+                    "type": "Smart phone",
+                    "OS": "PopupiOS (9.x, 8.x, 7.x)",
+                    "dimensions": "4.87 x 2.31 x 0.10 inches (123.8 x 58.6 x 7.6 mm)",
+                    "weight": "3.95 oz (112 g)",
+                    "materials": "Main body: aluminum"
+                }
+            }
+        },
+        {
+            "id": 2,
+            "name": "product2",
+            "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+            "descriptions": [
+                { "type": "text-image",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+                  "image":"http://placehold.it/800x350"}
+            ],
+            "technicalSpecs": {
+                "design": {
+                    "type": "Smart phone",
+                  "OS": "PopupiOS (9.x, 8.x, 7.x)",
+                    "dimensions": "4.87 x 2.31 x 0.10 inches (123.8 x 58.6 x 7.6 mm)",
+                    "weight": "3.95 oz (112 g)",
+                    "materials": "Main body: aluminum"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "product3",
+            "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+            "descriptions": [
+                { "type": "image-text",
+                  "background": "#E7E9BB",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text-image",
+                  "background": "#FFFFF",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text",
+                  "background": "#F03B4A",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>"
+                },
+                { "type": "image",
+                  "background": "#FFFFFF",
+                  "image":"http://placehold.it/800x350"
+                }
+            ],
+            "technicalSpecs": {
+                "design": {
+                    "type": "Smart phone",
+                    "OS": "PopupiOS (9.x, 8.x, 7.x)",
+                    "dimensions": "4.87 x 2.31 x 0.10 inches (123.8 x 58.6 x 7.6 mm)",
+                    "weight": "3.95 oz (112 g)",
+                    "materials": "Main body: aluminum"
+                }
+            }
+        },
+        {
+            "id": 4,
             "name": "product4",
-            "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+            "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+            "descriptions": [
+                { "type": "text-image",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text",
+                  "background": "rgba(36, 66, 44, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "image",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "image-text",
+                  "background": "rgba(36, 66, 44, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                }
+            ],
             "technicalSpecs": {
-                "DESIGN": {
-                    "Device type": "Smart phone",
+                "design": {
+                    "type": "Smart phone",
                     "OS": "PopupiOS (9.x, 8.x, 7.x)",
-                    "Dimensions": "4.87 x 2.31 x 0.30 inches (123.8 x 58.6 x 7.6 mm)",
-                    "Weight": "3.95 oz (112 g)",
-                    "Materials": "Main body: aluminum"
+                    "dimensions": "4.87 x 2.31 x 0.10 inches (123.8 x 58.6 x 7.6 mm)",
+                    "weight": "3.95 oz (112 g)",
+                    "materials": "Main body: plastic"
                 }
             }
-    	},
-    	{
-		 	"id": 5,
+        },
+        {
+            "id": 5,
             "name": "product5",
-            "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+            "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+            "descriptions": [
+                { "type": "image-text",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text-image",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text-image",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                }      
+            ],
             "technicalSpecs": {
-                "DESIGN": {
-                    "Device type": "Smart phone",
+                "design": {
+                    "type": "Smart phone",
                     "OS": "PopupiOS (9.x, 8.x, 7.x)",
-                    "Dimensions": "4.87 x 2.31 x 0.30 inches (123.8 x 58.6 x 7.6 mm)",
-                    "Weight": "3.95 oz (112 g)",
-                    "Materials": "Main body: aluminum"
+                    "dimensions": "4.87 x 2.31 x 0.10 inches (123.8 x 58.6 x 7.6 mm)",
+                    "weight": "3.95 oz (112 g)",
+                    "materials": "Main body: plastic"
                 }
             }
-    	},
-    	{
-		 	"id": 6,
+        },
+        {
+            "id": 6,
             "name": "product6",
-            "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+            "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+            "descriptions": [
+                { "type": "text-image",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text-image",
+                  "background": "rgba(240, 203, 53, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                },
+                { "type": "text-image",
+                  "background": "rgba(255, 255, 255, 0.1)",
+                  "description": "<h2 class='title'>Praesent commodo cursus magna</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>",
+                  "image":"http://placehold.it/800x350"
+                }
+            ],
             "technicalSpecs": {
-                "DESIGN": {
-                    "Device type": "Smart phone",
-                    "OS": "PopupiOS (9.x, 8.x, 7.x)",
-                    "Dimensions": "4.87 x 2.31 x 0.30 inches (123.8 x 58.6 x 7.6 mm)",
-                    "Weight": "3.95 oz (112 g)",
-                    "Materials": "Main body: aluminum"
+                "design": {
+                    "type": "Smart phone",
+                    "OS": "PopupiOS (19.x, 18.x)",
+                    "dimensions": "6.87 x 3.31 x 0.10 inches (123.8 x 58.6 x 7.6 mm)",
+                    "weight": "6.95 oz (112 g)",
+                    "materials": "Main body: crystal"
                 }
             }
-    	}
+        }
     ]
-}    	
+}       
