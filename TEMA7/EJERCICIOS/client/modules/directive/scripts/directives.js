@@ -4,21 +4,18 @@ var gnaAsDirectiveDirecives = angular.module('gnaAsDirectiveDirecives', []);
 /* Creating a new directive */  
 gnaAsDirectiveDirecives.directive('gnaDirectiveModuleDirective', function($interval) {
   return {
-    restrict: 'E',
-    template:  ' <div id="gna-container"> ' +
-               '   <h3> GNA como directiva con MOD {{mod}} e intervalo de tiempo {{interval}} ms</h3> ' +
-               '   Por favor pulsa "GNA": ' +
-               '   <button type="submit" class="btn btn-default" ng-click="generateRandomNumber()">Generar Numero Aleatorio</button> ' +
-               '   <div id="display"> ' +
-               '     <div id="random-number"> ' +
-               '       <h3> El numero aleatorio generado es: {{randomNumber}} </h3> ' +
-               '     </div> ' +
-               '   </div> ' +
-               ' </div> ',
+    restrict: 'EA',
+    template: '<table class="gna-table">' +
+              '<thead><tr><th>MOD</th><th>TIME</th></tr></thead>' +
+              '<tbody><tr><td data-label="Mod">{{ mod }}</td><td data-label="Time">{{ interval }} ms</td></tr></tbody> ' +
+              '</table>' +
+              '<div class="btn title" ng-click="generateRandomNumber()">Generar Numero Aleatorio</div>' +
+              '<h3 class="number"> {{randomNumber}} </h3>',
     link: function (scope, element, attrs) {
       
-      var gnaContainerId = element.find('#gna-container');
-      var randomNumberId = element.find('#random-number');
+      var numberId = element.find('.number');
+      var button = element.find('.btn');
+      var intervalPromise;
 
       function generateRandomNumber (){return Math.floor((Math.random() * attrs.mod) + 1)}
       scope.mod = attrs.mod;
@@ -26,12 +23,27 @@ gnaAsDirectiveDirecives.directive('gnaDirectiveModuleDirective', function($inter
       scope.randomNumber;
 
       scope.generateRandomNumber = function() {
-        $interval(function() {
-          scope.randomNumber = generateRandomNumber();
-          if (scope.randomNumber % 2 == 0) { gnaContainerId.addClass('alarm'); randomNumberId.addClass('even'); }
-          else { gnaContainerId.removeClass('alarm'); randomNumberId.removeClass('even'); }
-        }, scope.interval);
-      };         
+        if (intervalPromise == undefined){
+          // We trigger the interval
+          intervalPromise = $interval(function() {
+            console.log("directive interval")
+            scope.randomNumber = generateRandomNumber();
+            if (scope.randomNumber % 2 == 0) { numberId.addClass('even'); }
+            else { numberId.removeClass('even'); }
+          }, scope.interval);
+          // And turn the button into the stop button
+          button.text('STOP');
+        }
+        else {
+          // We stop the interval
+          $interval.cancel(intervalPromise);
+          intervalPromise = undefined;
+          // And set the original text of the button
+          button.text('Generar Numero Aleatorio');
+        }
+      }; 
+      scope.$on('$destroy', function () { $interval.cancel(intervalPromise); });
     }
   };
 });
+

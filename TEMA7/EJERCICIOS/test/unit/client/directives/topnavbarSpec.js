@@ -1,94 +1,91 @@
-describe('topnavbar', function() {
+describe('navbar', function() {
   
 	var elm, scope;
 
 	beforeEach(function (){
 
+		// Module dependences
 		module('ngRoute');
 		module('gnasDirectives');
 		module('htmlTemplates');
 
 		inject(function($injector, $compile) {
 			$rootScope = $injector.get('$rootScope');
-			elm = angular.element('<topnavbar></topnavbar>');
+			elm = angular.element('<navbar><navbar>');
 			scope = $rootScope.$new();
 			$compile(elm)(scope);
 			scope.$digest();
-
 			// Spying on the broadcasting to test if we listen the events correctly
 	        spyOn($rootScope, '$broadcast').and.callThrough();
 		});
 	});
   
 	it('should render correctly the navbar links', function() {   
-	    var moduleOneIdLink = elm.find('#module-one-idLink');
-	    expect(moduleOneIdLink.length).toBe(1);
-	    var moduleTwoIdLink = elm.find('#module-two-idLink');
-	    expect(moduleTwoIdLink.length).toBe(1);
-	    var moduleThreeIdLink = elm.find('#module-three-idLink');
-	    expect(moduleThreeIdLink.length).toBe(1);
-	    var moduleFourIdLink = elm.find('#module-four-idLink');
-	    expect(moduleFourIdLink.length).toBe(1);
-	    var moduleFiveIdLink = elm.find('#module-five-idLink');
-	    expect(moduleFiveIdLink.length).toBe(1);
+	    var moduleManualIdLink = elm.find('#manual-idLink');
+	    expect(moduleManualIdLink.length).toBe(1);
+	    var moduleUILogicIdLink = elm.find('#uilogic-idLink');
+	    expect(moduleUILogicIdLink.length).toBe(1);
+	    var moduleDirectiveIdLink = elm.find('#directive-idLink');
+	    expect(moduleDirectiveIdLink.length).toBe(1);
+	    var moduleServiceIdLink = elm.find('#service-idLink');
+	    expect(moduleServiceIdLink.length).toBe(1);
+	    var moduleApiIdLink = elm.find('#api-idLink');
+	    expect(moduleApiIdLink.length).toBe(1);
 	  });
 
-    it('should be listening "$routeChangeSuccess" and manipulate the DOM accordingly', function (){ 
-		
-		var $$route, currentURLMockedPath, previousURLMockedPath, originalPath;
-		
+    it('should be active the link that corresponds to the current module in the URL', function (){ 
+		var isolateScope = elm.isolateScope();
+		var MANUAL = 0; UILOGIC=1; DIRECTIVE=2; SERVICE=3; API=4;
+
+		expect(isolateScope.currentModuleName).toBe('manual');
     	// When Manual
-    	var moduleOneIdLink = elm.find('#module-one-idLink');
-    	$$route = {originalPath: '/manual'};
-		currentURLMockedPath = {$$route: $$route}; 
-		$$route = {originalPath: '/service'};
-		previousURLMockedPath = {$$route: $$route}; 
-		$rootScope.$broadcast('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect(moduleOneIdLink.hasClass('active')).toBe(true);
+    	var moduleManualIdLink = elm.find('#manual-idLink');
+    	// Testing goToModule function
+		isolateScope.goToModule(isolateScope.modules[MANUAL]);
+			// Testing the scope.$on("$routeChangeSuccess")
+			$rootScope.$broadcast('$routeChangeSuccess');
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
+			// Now currentModuleName should contain the module MANUAL
+			expect(isolateScope.currentModuleName).toBe('manual');
 
 		// When UILogic
-    	var moduleTwoIdLink = elm.find('#module-two-idLink');
-    	$$route = {originalPath: '/uilogic'};
-		currentURLMockedPath = {$$route: $$route}; 
-		$$route = {originalPath: '/manual'};
-		previousURLMockedPath = {$$route: $$route}; 
-		$rootScope.$broadcast('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect(moduleOneIdLink.hasClass('active')).toBe(false);
-		expect(moduleTwoIdLink.hasClass('active')).toBe(true);
-
+    	var moduleUILogicIdLink = elm.find('#uilogic-idLink');
+		// Testing goToModule function
+		isolateScope.goToModule(isolateScope.modules[UILOGIC]);
+			// Testing the scope.$on("$routeChangeSuccess")
+			$rootScope.$broadcast('$routeChangeSuccess');
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
+			// Now currentModuleName should contain the module UILOGIC
+			expect(isolateScope.currentModuleName).toBe('uilogic');
+		
 		// When Directive
-    	var moduleThreeIdLink = elm.find('#module-three-idLink');
-    	$$route = {originalPath: '/directive'};
-		currentURLMockedPath = {$$route: $$route}; 
-		$$route = {originalPath: '/uilogic'};
-		previousURLMockedPath = {$$route: $$route}; 
-		$rootScope.$broadcast('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect(moduleTwoIdLink.hasClass('active')).toBe(false);
-		expect(moduleThreeIdLink.hasClass('active')).toBe(true);
+    	var moduleDirectiveIdLink = elm.find('#directive-idLink');
+		// Testing goToModule function
+		isolateScope.goToModule(isolateScope.modules[DIRECTIVE]);
+			// Testing the scope.$on("$routeChangeSuccess")
+			$rootScope.$broadcast('$routeChangeSuccess');
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
+			// Now currentModuleName should contain the module DIRECTIVE
+			expect(isolateScope.currentModuleName).toBe('directive');
 
 		// When Service
-    	var moduleFourIdLink = elm.find('#module-four-idLink');
-    	$$route = {originalPath: '/service'};
-		currentURLMockedPath = {$$route: $$route}; 
-		$$route = {originalPath: '/directive'};
-		previousURLMockedPath = {$$route: $$route}; 
-		$rootScope.$broadcast('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect(moduleThreeIdLink.hasClass('active')).toBe(false);
-		expect(moduleFourIdLink.hasClass('active')).toBe(true);
+    	var moduleServiceIdLink = elm.find('#service-idLink');
+		// Testing goToModule function
+		isolateScope.goToModule(isolateScope.modules[SERVICE]);
+			// Testing the scope.$on("$routeChangeSuccess")
+			$rootScope.$broadcast('$routeChangeSuccess');
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
+			// Now currentModuleName should contain the module SERVICE
+			expect(isolateScope.currentModuleName).toBe('service')
 
 		// When API
-    	var moduleFiveIdLink = elm.find('#module-five-idLink');
-    	$$route = {originalPath: '/api'};
-		currentURLMockedPath = {$$route: $$route}; 
-		$$route = {originalPath: '/service'};
-		previousURLMockedPath = {$$route: $$route}; 
-		$rootScope.$broadcast('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess', currentURLMockedPath, previousURLMockedPath);
-		expect(moduleFourIdLink.hasClass('active')).toBe(false);
-		expect(moduleFiveIdLink.hasClass('active')).toBe(true);
+    	var moduleApiIdLink = elm.find('#module-idLink');
+		// Testing goToModule function
+		isolateScope.goToModule(isolateScope.modules[API]);
+			// Testing the scope.$on("$routeChangeSuccess")
+			$rootScope.$broadcast('$routeChangeSuccess');
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
+			// Now currentModuleName should contain the module API
+			expect(isolateScope.currentModuleName).toBe('api');
     });	
 });

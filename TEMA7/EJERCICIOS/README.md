@@ -1,7 +1,7 @@
 # Nodejs App that serves an Angular SPA
 ================================================
 
-TEMA 11
+TEMA 7
 Angular course
 
 # Technologies:
@@ -11,4 +11,4 @@ Angular course
 
 # Description:
 
- * This project is an Angular app that ....
+ * This project is the GNAs container unitary and E2E tested 
