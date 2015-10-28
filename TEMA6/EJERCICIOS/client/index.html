@@ -4,47 +4,36 @@
     <head lang="es">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <base href=""/>
-        <title>Redradix-AngularJS</title>
-        <meta name="description" content="Redradix-AngularJS">
-        <meta name="viewport" content="width=device-width">
+        <base href="/">
+        <title>Angular Course</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="">
 
-        <!-- CSS BOOTSTRAP -->
-        <link rel="stylesheet" href="styles/vendor/bootstrap.css">
-
-        <!-- CSS GNAs -->
+        <!-- APP CSS -->
         <link rel="stylesheet" href="styles/gnas.css">
-        <link rel="stylesheet" href="styles/custom-navbar.css">
-        <link rel="stylesheet" href="styles/content.css">
+        <link rel="stylesheet" href="styles/navbar.css">
         <link rel="stylesheet" href="styles/footer.css">
             <!-- MODULE DIRECTIVES -->
             <link rel="stylesheet" href="modules/directive/css/gna.css">
 
- 
-        <!-- CSS FONT -->
-        <!-- AWESOME -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" href="bower_components/font-awesome-animation/dist/font-awesome-animation.min.css">
-        <!-- DBOOM -->
-        <link rel="stylesheet" href="custom-font/css/fontello.css">
     </head>
 
     <body ng-app="gnasApp">
 
-        <topnavbar></topnavbar>
-        <content></content>
-        <foot></foot>
+        <div id="navbar" navbar></div>
+        <div id="content" ng-view></div>
+        <div id="footer" footer></div>
         
         <script src="scripts/vendor/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
   
-        <!-- GNAs SCRIPTS-->
+        <!-- APP SCRIPTS-->
         <script src="scripts/gnas.js"></script>
         <script src="scripts/directives.js"></script>
         <!-- -->      
 
-         <!-- GNAs MODULES-->
+         <!-- APP MODULES-->
          <!-- UILOGIC MODULE-->
         <script src="modules/uilogic/scripts/gna.js"></script>
         <script src="modules/uilogic/scripts/controllers.js"></script>

@@ -4,26 +4,50 @@ var gnaWithServiceDirectives = angular.module('gnaWithServiceDirectives', ['gnaW
 /* Creating a new directive */  
 gnaWithServiceDirectives.directive('gnaDirectiveModuleService', function($interval, gnaService) {
   return {
-    restrict: 'E',
+    restrict: 'EA',
     scope: {},
-    template:  ' <div id="gna-container"> ' +
-               '   <h3> GNA con servicio MOD {{mod}} e intervalo de tiempo {{interval}} ms</h3> ' +
-               '   <button type="submit" class="btn btn-default" ng-click="generateRandomNumber()">Generar Numero Aleatorio</button> ' +
-               '   <div id="display"> ' +
-               '     <div id="random-number"> ' +
-               '       <h3> El numero aleatorio generado es: {{randomNumber}} </h3> ' +
-               '     </div> ' +
-               '   </div> ' +
-               ' </div> ',
+    template: '<table class="gna-table">' +
+              '<thead><tr><th>MOD</th><th>TIME</th></tr></thead>' +
+              '<tbody><tr><td data-label="Mod">{{ mod }}</td><td data-label="Time">{{ interval }} ms</td></tr></tbody> ' +
+              '</table>' +
+              '<div class="btn title" ng-click="generateRandomNumber()">Generar Numero Aleatorio</div>' +
+              '<h3 class="number"> {{randomNumber}} </h3>',
     link: function (scope, element, attrs) {
-      scope.$on(gnaService.subscriptionEvent(), function($event, randomNumber){scope.randomNumber = randomNumber;});
-      scope.mod = attrs.mod;
-      scope.interval = attrs.interval;
+      
+      var intervalPromise, button;
+
+      init();
+
+      function init() {
+
+        // DOM
+        button = element.find('.btn');
+
+        // SCOPE
+        scope.$on(gnaService.subscriptionEvent(), function($event, randomNumber){ scope.randomNumber = randomNumber; });
+        scope.mod = attrs.mod;
+        scope.interval = attrs.interval;
+        scope.randomNumber = '-';
+        scope.$on('$destroy', function () { $interval.cancel(intervalPromise); }); 
+      }
+
       scope.generateRandomNumber = function() {
-        $interval(function() {
-          gnaService.startService(attrs.mod);
-        }, scope.interval);
-      };      
+        if (intervalPromise == undefined){
+          // We trigger the interval
+          intervalPromise = $interval(function() {
+            gnaService.startService(attrs.mod);
+          }, scope.interval);
+          // And turn the button into the stop button
+          button.text('STOP');
+        }
+        else {
+          // We stop the interval
+          $interval.cancel(intervalPromise);
+          intervalPromise = undefined;
+          // And set the original text of the button
+          button.text('Generar Numero Aleatorio');
+        }
+      };
     }
   };
 });
