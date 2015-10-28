@@ -14,12 +14,23 @@ gnaWithServiceDirectives.directive('gnaDirectiveModuleService', function($interv
               '<h3 class="number"> {{randomNumber}} </h3>',
     link: function (scope, element, attrs) {
       
-      var intervalPromise;
-      var button = element.find('.btn');
+      var intervalPromise, button;
 
-      scope.$on(gnaService.subscriptionEvent(), function($event, randomNumber){ scope.randomNumber = randomNumber; });
-      scope.mod = attrs.mod;
-      scope.interval = attrs.interval;
+      init();
+
+      function init() {
+
+        // DOM
+        button = element.find('.btn');
+
+        // SCOPE
+        scope.$on(gnaService.subscriptionEvent(), function($event, randomNumber){ scope.randomNumber = randomNumber; });
+        scope.mod = attrs.mod;
+        scope.interval = attrs.interval;
+        scope.randomNumber = '-';
+        scope.$on('$destroy', function () { $interval.cancel(intervalPromise); }); 
+      }
+
       scope.generateRandomNumber = function() {
         if (intervalPromise == undefined){
           // We trigger the interval
@@ -37,7 +48,6 @@ gnaWithServiceDirectives.directive('gnaDirectiveModuleService', function($interv
           button.text('Generar Numero Aleatorio');
         }
       };
-      scope.$on('$destroy', function () { $interval.cancel(intervalPromise); }); 
     }
   };
 });

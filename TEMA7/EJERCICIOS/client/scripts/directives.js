@@ -2,7 +2,7 @@ var gnasDirectives = angular.module('gnasDirectives', []);
 
 gnasDirectives.directive('navbar', function($location, $route) {
   return {
-    restrict: 'E',  
+    restrict: 'A',  
     scope: {},
     templateUrl: 'views/navbar.html',
     link: function (scope, element) {
@@ -32,7 +32,7 @@ gnasDirectives.directive('navbar', function($location, $route) {
 
 gnasDirectives.directive('footer', function() {
   return {
-    restrict: 'E',
+    restrict: 'A',
     templateUrl: 'views/footer.html'
   };
 });

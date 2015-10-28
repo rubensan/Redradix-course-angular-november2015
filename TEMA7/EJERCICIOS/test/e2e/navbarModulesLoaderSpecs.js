@@ -9,10 +9,8 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 	it('should load correctly the modules when clicking at the navbar links ', function() {
 
 		// navbar directive is present 
-		var navbar = element(by.tagName('navbar'));
+		var navbar = element(by.id('navbar'));
 		expect(navbar.isDisplayed()).toBe(true);
-		var nav = navbar.element(by.id('navbar'));
-		expect(nav.isDisplayed()).toBe(true);
 		
 		// At start, manual  module is the one active'
 		// 1 Checking URL

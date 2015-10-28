@@ -43,10 +43,11 @@ input[type="text"].focus {
 **************/
 
 #navbar { height: 10%; }
-.content { height: 85%;}
+#content { height: 70%; }
+#message-container { height: 5%; }
 #footer { height: 5%; }
 #not-found-container { margin: 4em 4em 4em 4em; text-align: center; }
-#gna-container { position: relative; top: 40%; transform: translateY(-40%); height: 50%; text-align: center; }
+#gna-container { position: relative; top: 40%; transform: translateY(-30%); height: auto; text-align: center; }
 .container { max-width: 50em; margin: 0 auto; }
 
 /**************

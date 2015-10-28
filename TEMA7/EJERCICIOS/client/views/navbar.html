@@ -1,7 +1,6 @@
-<div id="navbar">
+<div>
     <ul>
         <li ng-repeat="module in modules"><a ng-class="{'link-active': module.title == currentModuleName}" id="{{module.idLink}}" href='/{{module.title}}' ng-click="goToModule(module)"> <h4> {{module.text}} </h4> </a> 
         </li>
     </ul>
 </div>
-<div ui-view></div>

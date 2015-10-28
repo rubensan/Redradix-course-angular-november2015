@@ -11,7 +11,7 @@ describe('navbar', function() {
 
 		inject(function($injector, $compile) {
 			$rootScope = $injector.get('$rootScope');
-			elm = angular.element('<navbar><navbar>');
+			elm = angular.element('<div id="navbar" navbar></div>');
 			scope = $rootScope.$new();
 			$compile(elm)(scope);
 			scope.$digest();
@@ -79,7 +79,7 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('service')
 
 		// When API
-    	var moduleApiIdLink = elm.find('#module-idLink');
+    	var moduleApiIdLink = elm.find('#api-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[API]);
 			// Testing the scope.$on("$routeChangeSuccess")
