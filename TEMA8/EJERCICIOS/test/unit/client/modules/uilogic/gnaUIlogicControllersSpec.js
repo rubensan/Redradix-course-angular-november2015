@@ -20,7 +20,7 @@ describe('GNA UILogic Controllers', function() {
     describe('$scope.generateRandomNumber()', function() {
 
         it('should return a new randon number', function() {
-            expect($scope.randomNumber).not.toBeDefined();
+            expect($scope.randomNumber).toBe('-');
             $scope.generateRandomNumber();
             $interval.flush(1000);
             expect($scope.randomNumber).toBeDefined(); 

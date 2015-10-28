@@ -11,7 +11,7 @@ describe('navbar', function() {
 
 		inject(function($injector, $compile) {
 			$rootScope = $injector.get('$rootScope');
-			elm = angular.element('<navbar><navbar>');
+			elm = angular.element('<div id="navbar" navbar></div>');
 			scope = $rootScope.$new();
 			$compile(elm)(scope);
 			scope.$digest();
@@ -31,11 +31,14 @@ describe('navbar', function() {
 	    expect(moduleServiceIdLink.length).toBe(1);
 	    var moduleApiIdLink = elm.find('#api-idLink');
 	    expect(moduleApiIdLink.length).toBe(1);
+	    var modulePromiseIdLink = elm.find('#promise-idLink');
+	    expect(modulePromiseIdLink.length).toBe(1);
 	  });
 
     it('should be active the link that corresponds to the current module in the URL', function (){ 
 		var isolateScope = elm.isolateScope();
-		var MANUAL = 0; UILOGIC=1; DIRECTIVE=2; SERVICE=3; API=4;
+		//console.log(isolateScope);
+		var MANUAL=5; UILOGIC=4; DIRECTIVE=3; SERVICE=2; API=1; PROMISE=0;
 
 		expect(isolateScope.currentModuleName).toBe('manual');
     	// When Manual
@@ -79,7 +82,7 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('service')
 
 		// When API
-    	var moduleApiIdLink = elm.find('#module-idLink');
+    	var moduleApiIdLink = elm.find('#api-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[API]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -87,5 +90,15 @@ describe('navbar', function() {
 			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
 			// Now currentModuleName should contain the module API
 			expect(isolateScope.currentModuleName).toBe('api');
+
+		// When Promise
+    	var modulePromiseIdLink = elm.find('#module-idLink');
+		// Testing goToModule function
+		isolateScope.goToModule(isolateScope.modules[PROMISE]);
+			// Testing the scope.$on("$routeChangeSuccess")
+			$rootScope.$broadcast('$routeChangeSuccess');
+			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
+			// Now currentModuleName should contain the module API
+			expect(isolateScope.currentModuleName).toBe('promise');
     });	
 });
