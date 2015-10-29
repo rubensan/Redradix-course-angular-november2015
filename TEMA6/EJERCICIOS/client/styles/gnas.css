@@ -38,6 +38,22 @@ input[type="text"].focus {
   box-shadow: 0 0 5px 1px #969696;
 }
 
+/******************
+ CUSTOM SCROLL BAR 
+*******************/
+
+::-webkit-scrollbar { height: 3px; }
+::-webkit-scrollbar-track-piece  {
+background-color: #fff;
+border: 1px solid #eee;
+-webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+background-color: #eee;
+border: 1px solid #ddd;
+-webkit-border-radius: 6px;
+}
+
 /**************
  Layout styles
 **************/

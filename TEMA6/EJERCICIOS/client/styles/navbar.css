@@ -2,7 +2,7 @@
  Nav
 *****/
 
-#navbar { height: 10%; padding: 0.5em 1.5em 0em 1.5em; border-bottom: solid 2px rgba(242,242,242,0.5); overflow-x: scroll; white-space: nowrap; background: rgba(255,255,255,0.9); }
+#navbar { height: 10%; padding: 0.5em 1.5em 0em 1.5em; border-bottom: solid 2px rgba(242,242,242,0.5); overflow-x: auto; overflow-y: hidden; white-space: nowrap; background: rgba(255,255,255,0.9); }
 #navbar a { transition: all .3s ease-in-out; display: block; color: #fff; text-decoration: none; }
 #navbar a:link { color: black; }
 #navbar a:visited { color: black; }
