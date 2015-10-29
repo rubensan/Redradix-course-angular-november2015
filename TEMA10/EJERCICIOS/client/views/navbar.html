@@ -1,0 +1,6 @@
+<div>
+    <ul>
+        <li ng-repeat="module in modules"><a ng-class="{'link-active': module.title == currentModuleName}" id="{{module.idLink}}" ui-sref="{{module.title}}"> <h4> {{module.text}} </h4> </a> 
+        </li>
+    </ul>
+</div>
