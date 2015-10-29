@@ -35,7 +35,7 @@ angular.module('gnasApp', [
             .when('/promise', { templateUrl : 'modules/generators/promise/views/promise.html'})
 
             // Otherwise -> go to Module GNA Manual
-            .otherwise({redirectTo: '/manual'});
+            .otherwise({redirectTo: '/promise'});
 
     $locationProvider.html5Mode({
 	  enabled: true	});

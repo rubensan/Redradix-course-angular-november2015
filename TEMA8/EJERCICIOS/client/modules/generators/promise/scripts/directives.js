@@ -6,11 +6,11 @@ gnaPromiseDirectives.directive('gnaPromise', function($interval, $q, gnaPromiseS
   return {
     restrict: 'EA',
     scope: {},
-    template: '<div id="api-selector-container">' +
-              '<h4 class="title">APIs</h4>' +
-              '<span ng-repeat="api in apis" ng-click="seclectApi(api.apiName)">' + 
-              '<input id="{{ api.id }}" class="radio-custom" name="radio-group" type="radio" ng-checked="api.apiName == 0">' +
-              '<label for="{{ api.id }}" class="radio-custom-label">{{ api.text }}</label>' +
+    template: '<div id="service-selector-container">' +
+              '<h4 class="title">Api Services</h4>' +
+              '<span ng-repeat="service in services" ng-click="seclectService(service.serviceName)">' + 
+              '<input id="{{ service.id }}" class="radio-custom" name="radio-group" type="radio" ng-checked="service.serviceName == 0">' +
+              '<label for="{{ service.id }}" class="radio-custom-label">{{ service.text }}</label>' +
               '</span>' +
               '</div>' +
               '<table class="gna-table">' +
@@ -21,7 +21,7 @@ gnaPromiseDirectives.directive('gnaPromise', function($interval, $q, gnaPromiseS
               '<h3 class="number"> {{randomNumber}} </h3>',
     link: function (scope, element, attrs) {
 
-      var intervalPromise, button, API_UP, API_DOWN, API_DELAY, newGenerationBlocked;
+      var intervalPromise, button, SERVICE_OK, SERVICE_ERROR, SERVICE_DELAY, newGenerationBlocked;
       
       init();
 
@@ -31,18 +31,18 @@ gnaPromiseDirectives.directive('gnaPromise', function($interval, $q, gnaPromiseS
         button = element.find('.btn');
         
         // VARIABLES        
-        API_UP = 0; API_DOWN = 1; API_DELAY = 2;
+        SERVICE_OK = 0; SERVICE_ERROR = 1; SERVICE_DELAY = 2;
         allowNewGenerations();
  
         // SCOPE
         scope.mod = attrs.mod;
         scope.interval = attrs.interval;
         scope.randomNumber = '-';
-        scope.apiSelection = API_UP;
-        scope.apis = [
-          { id: 'api-up', text: 'UP', apiName: API_UP },
-          { id: 'api-down', text: 'DOWN', apiName: API_DOWN },
-          { id: 'api-delay', text: 'DELAY', apiName: API_DELAY }
+        scope.serviceSelection = gnaPromiseService.getWorkingServiceUrl();
+        scope.services = [
+          { id: 'service-up', text: 'OK', serviceName: SERVICE_OK },
+          { id: 'service-down', text: 'ERROR', serviceName: SERVICE_ERROR },
+          { id: 'service-delay', text: 'DELAY', serviceName: SERVICE_DELAY }
         ];
         scope.$on('$destroy', function () { $interval.cancel(intervalPromise); }); 
       }
@@ -62,11 +62,15 @@ gnaPromiseDirectives.directive('gnaPromise', function($interval, $q, gnaPromiseS
               // Lets use that to know if we wait for a long time
               var wait = undefined;
 
+              /***********/
               /* PROMISE */
-              promiseService = gnaPromiseService.startService(scope.mod, scope.apiSelection);
-              //We just made a new call, so we block passible calls triggered by the $interval
+              /***********/
+              promiseService = gnaPromiseService.startService(scope.mod, scope.serviceSelection);
+             
+              // We just made a new call, so we block passible calls triggered by the $interval
               blockNewGenerations();
 
+              // The Resolve Reject and Notify
               promiseService.then(function(randomNumber) {
                 messengerService.popMessage('info', 'Operation Success', '');
                 wait = undefined;
@@ -86,6 +90,8 @@ gnaPromiseDirectives.directive('gnaPromise', function($interval, $q, gnaPromiseS
                 }
               });
               /***********/
+              /***********/
+              /***********/
 
             }
 
@@ -103,7 +109,11 @@ gnaPromiseDirectives.directive('gnaPromise', function($interval, $q, gnaPromiseS
           messengerService.popMessage('info', 'Stopping Generation', '');
         }
       };
-      scope.seclectApi = function(api) { scope.apiSelection = api; };
+      scope.seclectService = function(service) { 
+        if (service == SERVICE_OK) { scope.serviceSelection = gnaPromiseService.getWorkingServiceUrl(); }
+        if (service == SERVICE_ERROR) { scope.serviceSelection = gnaPromiseService.getErrorServiceUrl(); }
+        if (service == SERVICE_DELAY) { scope.serviceSelection = gnaPromiseService.getDelayServiceUrl(); }
+      };
     }
   };
 });
