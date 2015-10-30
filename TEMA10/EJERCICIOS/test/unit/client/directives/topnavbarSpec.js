@@ -43,9 +43,12 @@ describe('navbar', function() {
 		var isolateScope = elm.isolateScope();
 		var MANUAL=5; UILOGIC=4; DIRECTIVE=3; SERVICE=2; API=1; PROMISE=0;
 
+		// This is mocking the initial routing of the router
+		goTo(isolateScope.modules[PROMISE].title);
+		$rootScope.$broadcast('$stateChangeSuccess');
 		expect(isolateScope.currentModuleName).toBe('promise');
+
     	// When Manual
-    	var moduleManualIdLink = elm.find('#manual-idLink');
     	// Testing goToModule function
 		goTo(isolateScope.modules[MANUAL].title);
 			// Testing the scope.$on("$stateChangeSuccess")
@@ -55,7 +58,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('manual');
 
 		// When UILogic
-    	var moduleUILogicIdLink = elm.find('#uilogic-idLink');
 		// Testing goToModule function
 		goTo(isolateScope.modules[UILOGIC].title);
 			// Testing the scope.$on("$stateChangeSuccess")
@@ -65,7 +67,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('uilogic');
 		
 		// When Directive
-    	var moduleDirectiveIdLink = elm.find('#directive-idLink');
 		// Testing goToModule function
 		goTo(isolateScope.modules[DIRECTIVE].title);
 			// Testing the scope.$on("$stateChangeSuccess")
@@ -75,7 +76,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('directive');
 
 		// When Service
-    	var moduleServiceIdLink = elm.find('#service-idLink');
 		// Testing goToModule function
 		goTo(isolateScope.modules[SERVICE].title);
 			// Testing the scope.$on("$stateChangeSuccess")
@@ -85,7 +85,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('service')
 
 		// When API
-    	var moduleApiIdLink = elm.find('#api-idLink');
 		// Testing goToModule function
 		goTo(isolateScope.modules[API].title);
 			// Testing the scope.$on("$stateChangeSuccess")
@@ -95,7 +94,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('api');
 
 		// When Promise
-    	var modulePromiseIdLink = elm.find('#promise-idLink');
 		// Testing goToModule function
 		goTo(isolateScope.modules[PROMISE].title);
 			// Testing the scope.$on("$stateChangeSuccess")

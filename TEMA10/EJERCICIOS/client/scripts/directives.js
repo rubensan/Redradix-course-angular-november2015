@@ -14,14 +14,14 @@ gnasDirectives.directive('navbar', function($location) {
       })
       
       function init() {
-        scope.currentModuleName = $location.path().substring(1) || 'promise';
+        scope.currentModuleName = $location.path().substring(1);
         scope.modules = [
-          { idLink: 'promise-idLink', title: 'promise' ,text:'Promise' },
-          { idLink: 'api-idLink', title: 'api' ,text:'Ext API' },
-          { idLink: 'service-idLink', title: 'service' ,text:'Service' },
-          { idLink: 'directive-idLink', title: 'directive' ,text:'Directive' },
-          { idLink: 'uilogic-idLink', title: 'uilogic' ,text:'UIlogic' },
-          { idLink: 'manual-idLink', title: 'manual' ,text:'Manual' }
+          { idLink: 'promise-idLink', title: 'promise', text:'Promise' },
+          { idLink: 'api-idLink', title: 'api', text:'Ext API' },
+          { idLink: 'service-idLink', title: 'service', text:'Service' },
+          { idLink: 'directive-idLink', title: 'directive', text:'Directive' },
+          { idLink: 'uilogic-idLink', title: 'uilogic', text:'UIlogic' },
+          { idLink: 'manual-idLink', title: 'manual', text:'Manual' }
         ];
       }
     }  

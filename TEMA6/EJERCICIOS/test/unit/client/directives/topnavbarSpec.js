@@ -34,12 +34,16 @@ describe('navbar', function() {
 	  });
 
     it('should be active the link that corresponds to the current module in the URL', function (){ 
+		
 		var isolateScope = elm.isolateScope();
-		var MANUAL = 0; UILOGIC=1; DIRECTIVE=2; SERVICE=3; API=4;
+		var MANUAL=0; UILOGIC=1; DIRECTIVE=2; SERVICE=3; API=4;
 
+		// This is mocking the initial routing of the router
+		isolateScope.goToModule(isolateScope.modules[MANUAL]);
+		$rootScope.$broadcast('$routeChangeSuccess');
 		expect(isolateScope.currentModuleName).toBe('manual');
+
     	// When Manual
-    	var moduleManualIdLink = elm.find('#manual-idLink');
     	// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[MANUAL]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -49,7 +53,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('manual');
 
 		// When UILogic
-    	var moduleUILogicIdLink = elm.find('#uilogic-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[UILOGIC]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -59,7 +62,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('uilogic');
 		
 		// When Directive
-    	var moduleDirectiveIdLink = elm.find('#directive-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[DIRECTIVE]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -69,7 +71,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('directive');
 
 		// When Service
-    	var moduleServiceIdLink = elm.find('#service-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[SERVICE]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -79,7 +80,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('service')
 
 		// When API
-    	var moduleApiIdLink = elm.find('#api-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[API]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -87,5 +87,6 @@ describe('navbar', function() {
 			expect($rootScope.$broadcast).toHaveBeenCalledWith('$routeChangeSuccess');
 			// Now currentModuleName should contain the module API
 			expect(isolateScope.currentModuleName).toBe('api');
+
     });	
 });

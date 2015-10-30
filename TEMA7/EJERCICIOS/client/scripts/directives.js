@@ -13,17 +13,16 @@ gnasDirectives.directive('navbar', function($location, $route) {
         scope.currentModuleName = $location.path().substring(1); 
       });
 
-      scope.goToModule = function(module) {
-       $location.path(module.title); }
+      scope.goToModule = function(module) { $location.path(module.title); }
 
       function init() {
-        scope.currentModuleName = $location.path().substring(1) || 'manual';
+        scope.currentModuleName = $location.path().substring(1);
         scope.modules = [
-          { idLink: 'manual-idLink', title: 'manual' ,text:'Manual' },
-          { idLink: 'uilogic-idLink', title: 'uilogic' ,text:'UIlogic' },
-          { idLink: 'directive-idLink', title: 'directive' ,text:'Directive' },
-          { idLink: 'service-idLink', title: 'service' ,text:'Service' },
-          { idLink: 'api-idLink', title: 'api' ,text:'Ext API' }
+          { idLink: 'manual-idLink', title: 'manual', text:'Manual' },
+          { idLink: 'uilogic-idLink', title: 'uilogic', text:'UIlogic' },
+          { idLink: 'directive-idLink', title: 'directive', text:'Directive' },
+          { idLink: 'service-idLink', title: 'service', text:'Service' },
+          { idLink: 'api-idLink', title: 'api', text:'Ext API' }
         ];
       }
     }  

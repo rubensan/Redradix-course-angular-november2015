@@ -36,13 +36,16 @@ describe('navbar', function() {
 	  });
 
     it('should be active the link that corresponds to the current module in the URL', function (){ 
+		
 		var isolateScope = elm.isolateScope();
-		//console.log(isolateScope);
 		var MANUAL=5; UILOGIC=4; DIRECTIVE=3; SERVICE=2; API=1; PROMISE=0;
 
-		expect(isolateScope.currentModuleName).toBe('manual');
+		// This is mocking the initial routing of the router
+		isolateScope.goToModule(isolateScope.modules[PROMISE]);
+		$rootScope.$broadcast('$routeChangeSuccess');
+		expect(isolateScope.currentModuleName).toBe('promise');
+		
     	// When Manual
-    	var moduleManualIdLink = elm.find('#manual-idLink');
     	// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[MANUAL]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -52,7 +55,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('manual');
 
 		// When UILogic
-    	var moduleUILogicIdLink = elm.find('#uilogic-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[UILOGIC]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -62,7 +64,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('uilogic');
 		
 		// When Directive
-    	var moduleDirectiveIdLink = elm.find('#directive-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[DIRECTIVE]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -72,7 +73,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('directive');
 
 		// When Service
-    	var moduleServiceIdLink = elm.find('#service-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[SERVICE]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -82,7 +82,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('service')
 
 		// When API
-    	var moduleApiIdLink = elm.find('#api-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[API]);
 			// Testing the scope.$on("$routeChangeSuccess")
@@ -92,7 +91,6 @@ describe('navbar', function() {
 			expect(isolateScope.currentModuleName).toBe('api');
 
 		// When Promise
-    	var modulePromiseIdLink = elm.find('#module-idLink');
 		// Testing goToModule function
 		isolateScope.goToModule(isolateScope.modules[PROMISE]);
 			// Testing the scope.$on("$routeChangeSuccess")

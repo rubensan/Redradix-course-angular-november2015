@@ -19,9 +19,9 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		var manualModuleLink = element.all(by.css('li')).get(5);
 		manualModuleLink.click();
 		browser.sleep(1000);
-		// 2 Checking NAVBAR link as ACTIVE
+		// 3 Checking NAVBAR link as ACTIVE
 		expect(manualModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
-		// 3 Checking that the module is actually PRESENT AT THE CONTENT
+		// 4 Checking that the module is actually PRESENT AT THE CONTENT
 
 		///////////// CLICK TO UILogic  ///////////
 		var UILogicModuleLink = element.all(by.css('li')).get(4);

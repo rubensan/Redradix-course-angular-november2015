@@ -12,13 +12,16 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		var navbar = element(by.id('navbar'));
 		expect(navbar.isDisplayed()).toBe(true);
 		
-		// At start, manual  module is the one active'
+		// At start, promise  module is the one active'
 		// 1 Checking URL
-		expect(browser.getCurrentUrl()).toContain('/manual');
-		// 2 Checking NAVBAR link as ACTIVE
+		expect(browser.getCurrentUrl()).toContain('/promise');
+		// 2 Going to Manual Module
 		var manualModuleLink = element.all(by.css('li')).get(5);
+		manualModuleLink.click();
+		browser.sleep(1000);
+		// 3 Checking NAVBAR link as ACTIVE
 		expect(manualModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
-		// 3 Checking that the module is actually PRESENT AT THE CONTENT
+		// 4 Checking that the module is actually PRESENT AT THE CONTENT
 
 		///////////// CLICK TO UILogic  ///////////
 		var UILogicModuleLink = element.all(by.css('li')).get(4);
