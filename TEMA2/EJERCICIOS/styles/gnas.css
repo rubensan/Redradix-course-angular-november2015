@@ -1,0 +1,101 @@
+/************
+ Base styles
+************/
+
+html { height: 100%; }
+body { height: 100%; margin: 0; padding: 0; color: black; background-color: white; text-rendering: optimizeLegibility; line-height: 1.45; letter-spacing: normal; font-weight: lighter; font-size: 1em/1.2; -webkit-font-smoothing: antialiased; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5,h6 { margin: 0 0 .5em; font-weight: 200; }
+h1 { font-size: 2.2em; margin-bottom: 2%;  } /* 36px */
+h2 { font-size: 1.5em; margin-bottom: 2%; } /* 28px */
+h3 { font-size: 1.375em; } /* 22px */
+h4 { font-size: 1.125em; } /* 18px */
+h5 { font-size: 1em; } /* 16px */
+h6 { font-size: .875em; } /* 14px */
+
+.number { font-size: 5em; }
+
+p { margin: 0 0 1.5em; line-height: 1.5; }
+blockquote { padding: 1em 2em; margin: 0 0 2em; border-left: 5px solid #eee; }
+hr { height: 0; margin-top: 1em; margin-bottom: 2em; border: 0; border-top: 1px solid #ddd; }
+table { background-color: transparent; border-spacing: 0; border-collapse: collapse; border-top: 1px solid #ddd; margin: 0 auto; }
+table.gna-table { margin-bottom: 2%; }
+th, td { padding: .5em 1em; vertical-align: top; text-align: left; border-bottom: 1px solid #ddd; }
+a { text-decoration: none; transition: all .7s ease-in-out; }
+ul { padding:0; text-align: center; }
+a:link { color: black; }
+a:visited { color: black; }
+a:hover { color: #58ACFA; }
+a:focus { color: #58ACFA; }
+input[type="text"] {text-align: center;
+  font-size: 1.2em; 
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+/******************
+ CUSTOM SCROLL BAR 
+*******************/
+
+::-webkit-scrollbar { height: 3px; }
+::-webkit-scrollbar-track-piece  {
+background-color: #fff;
+border: 1px solid #eee;
+-webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+background-color: #eee;
+border: 1px solid #ddd;
+-webkit-border-radius: 6px;
+}
+
+/**************
+ Layout styles
+**************/
+
+#navbar { height: 10%; }
+#content { height: 70%; }
+#message-container { height: 5%; }
+#footer { height: 5%; }
+#not-found-container { margin: 4em 4em 4em 4em; text-align: center; }
+#gna-container { position: relative; top: 40%; transform: translateY(-30%); height: auto; text-align: center; }
+.container { max-width: 50em; margin: 0 auto; }
+
+/**************
+ Single styles
+**************/
+
+.title { text-align: center; text-transform: uppercase; }
+.img-responsive { max-width: 100%; }
+.btn { transition: all .7s ease-in-out; color: #fff; background-color: #58ACFA; display: inline-block; padding: 1.5em 1.5em; margin-bottom: 0; line-height: 1.2; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: .5em; text-decoration: none; }
+.btn.title { font-size: 1em; font-weight: 200; }
+.btn:hover { color: #58ACFA; background-color: #fff; border: 1px solid #58ACFA; }
+.btn:focus { }
+.btn:active { }
+.table { width: 100%; max-width: 100%; margin-bottom: 20px; }
+.list-unstyled { padding-left: 0; list-style: none; }
+.list-inline { padding-left: 0; margin-left: -5px; list-style: none; }
+.list-inline > li { display: inline-block; padding-right: 5px; padding-left: 5px; }
+
+/***************
+ Responsiveness
+***************/
+
+/* Wide screens */
+@media (min-width: 42em) { header { padding: 1.5em 3em; } .footer { padding: 2em 3em; } }
+
+/* Table for small screens */
+@media screen and (max-width: 600px) {
+    table { border: 0; }
+    table thead {display: none; }
+    table tr { display: block; }
+    table td { display: block; text-align: right; }
+    table td:last-child { border-bottom: 0; }
+    table td:before { content: attr(data-label); float: left; text-transform: uppercase; font-weight: bold; }
+}
+
