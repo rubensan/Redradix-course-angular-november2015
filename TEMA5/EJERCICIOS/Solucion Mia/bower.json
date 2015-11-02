@@ -6,10 +6,6 @@
   "private": true,
   "dependencies": {
     "angular": "1.4.x",
-    "angular-route": "1.4.x",
-    "angular-ui-router": "0.2.15",
-    "angular-loader": "1.4.x",
-    "angular-mocks": "1.4.x",
-    "font-awesome": "4.2.0"
+    "angular-route": "1.4.x"
   }
 }

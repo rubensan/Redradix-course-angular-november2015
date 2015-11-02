@@ -5,7 +5,7 @@ angular.module('gnasApp', [
 	// GNAs Container
 	'gnasDirectives',
 	// GNAs Modules
-	'gnaUIlogic', 		// UIlogic Module
+	'gnaUIlogic', 	// UIlogic Module
 	'gnaAsDirective',	// As Directive Module
 	'gnaWithService',	// Service Module
 	'gnaApi'         	// Api Module
