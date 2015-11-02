@@ -1,18 +1,17 @@
-/* A module for services */
-var gnaApiServices = angular.module('gnaApiServices', []);	
+var gnaApiServices = angular.module('gnaApiServices', []);  
 
-/* Creating a new service */
+/* Creating a new service */  
 gnaApiServices.factory('gnaApiService', function($rootScope, $http) {
 
-  var SUBSCRIPTION = "event:newRandomNumber";
+  var SUBSCRIPTION = "event:newRandomNumberServiceModule";
 
   return {
     subscriptionEvent: function () {
       return SUBSCRIPTION;
     },
-    startService: function (mod) {
+     startService: function (mod) {
       $http({
-        url: 'http://172.19.151.109:3000/api/gna/' + mod, 
+        url: 'https://www.random.org/integers/?num=1&min=1&max=' + mod + '&col=1&base=10&format=plain&rnd=new', 
         method: 'GET'
         }).success(function(randomNumber) {
           $rootScope.$broadcast(SUBSCRIPTION, randomNumber);

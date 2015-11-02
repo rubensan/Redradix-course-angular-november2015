@@ -1,56 +1,57 @@
-/* A module for directives */
-var gnaApiDirectives = angular.module('gnaApiDirectives', ['gnaApiServices']);	
+/* A module for directives */  
+var gnaApiDirectives = angular.module('gnaApiDirectives', ['gnaApiServices']);  
 
-/* Creating a new directive */	
+/* Creating a new directive */  
 gnaApiDirectives.directive('gnaApi', function($interval, gnaApiService) {
   return {
-    restrict: 'E',
-    scope: {},
-    template: ' <div id="gna-container"> ' + 
-              ' <h3> GNA Servicio API Externo con MOD {{mod}} e intervalo de tiempo {{interval}} ms</h3> ' +
-              '  <button type="submit" class="btn btn-default" ng-click="generateRandomNumber()">Generar Numero Aleatorio</button> ' +
-              '  <div id="display"> ' +
-              '   <div id="random-number"> ' +
-              '    <h3> El numero aleatorio generado es: {{randomNumber}} </h3> ' +
-              '   </div> ' +
-              '  </div> ' +
-              ' </div> ',
+    restrict: 'A',
+    template:  ' <div id="gna-container"> ' +
+               '   <div class="btn title" ng-click="generateRandomNumber()">Generar Numero Aleatorio</div> ' +
+               '   <h3 class="number"> {{randomNumber}} </h3> ' +
+               ' </div> ',
     link: function (scope, element, attrs) {
-      scope.$on(gnaApiService.subscriptionEvent(), function($event, randomNumber){ scope.randomNumber = randomNumber;});
-      scope.mod = attrs.mod;
-      scope.interval = attrs.interval;
+      
+      var intervalPromise, button;
+
+      init();
+
+      function init() {
+
+        // DOM
+        button = element.find('.btn');
+
+        // SCOPE
+        scope.$on(gnaApiService.subscriptionEvent(), function($event, randomNumber){ scope.randomNumber = randomNumber; });
+        scope.mod = attrs.mod;
+        scope.interval = attrs.interval;
+        scope.randomNumber = '-';
+        scope.$on('$destroy', function () { $interval.cancel(intervalPromise); }); 
+      }
+
       scope.generateRandomNumber = function() {
-        $interval(function() {
-          gnaApiService.startService(attrs.mod);
-        }, scope.interval);
-      };      
+        if (intervalPromise == undefined){
+          // We trigger the interval
+          intervalPromise = $interval(function() {
+            gnaApiService.startService(attrs.mod);
+          }, scope.interval);
+          // And turn the button into the stop button
+          button.text('STOP');
+        }
+        else {
+          // We stop the interval
+          $interval.cancel(intervalPromise);
+          intervalPromise = undefined;
+          // And set the original text of the button
+          button.text('Generar Numero Aleatorio');
+        }
+      };
     }
-  };
-});
-
-gnaApiDirectives.directive('gnaApiWrapper', function() {
-  return {
-    restrict: 'E',
-    template: '<gna-api mod="25" interval="500"></gna-api>'
-  };
-});
-
-gnaApiDirectives.directive('content', function() {
-  return {
-    restrict: 'E',
-    template:   ' <div id="gnas-content"> ' +
-                '   <gna-api-wrapper></gna-api-wrapper> ' +
-                ' </div> '
   };
 });
 
 gnaApiDirectives.directive('foot', function() {
   return {
     restrict: 'E',
-    template: ' <footer class="footer navbar-fixed-bottom"> ' +
-              '  <div class="footer-row"> ' +
-              '   <a href="https://angularjs.org/" target="_blank"><img src="images/logo-angularjs.svg" alt="AngularJS" class="logo-angular"></a> ' +
-              '  </div> ' +
-              ' </footer> '
+    template: '<div> The © Copyright the <a rel="license" href="https://opensource.org/licenses/MIT" target="_blank" style="text-decoration: underline;">MIT license</a> and so on... </div>'
   };
 });

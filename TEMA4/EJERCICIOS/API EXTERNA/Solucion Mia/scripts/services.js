@@ -1,4 +1,3 @@
-/* A module for services */
 var gnaApiServices = angular.module('gnaApiServices', []);	
 
 /* Creating a new service */
