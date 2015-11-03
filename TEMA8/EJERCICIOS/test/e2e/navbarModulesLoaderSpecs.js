@@ -1,5 +1,3 @@
-'use strict';
-
 describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() {
 
 	beforeEach(function() {
@@ -22,6 +20,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		// 3 Checking NAVBAR link as ACTIVE
 		expect(manualModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 4 Checking that the module is actually PRESENT AT THE CONTENT
+		expect(element(by.css('input[ng-model="randomNumber"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO UILogic  ///////////
 		var UILogicModuleLink = element.all(by.css('li')).get(4);
@@ -32,6 +31,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		// 2 Checking NAVBAR link as ACTIVE
 		expect(UILogicModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 3 Checking that the module is actually PRESENT AT THE CONTENT
+		expect(element(by.xpath('//div[@ng-controller="gnaUIlogicCtrl"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO Directive  ///////////
 		var directiveModuleLink = element.all(by.css('li')).get(3);
@@ -42,7 +42,10 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		// 2 Checking NAVBAR link as ACTIVE
 		expect(directiveModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 3 Checking that the module is actually PRESENT AT THE CONTENT
-
+		expect(element(by.xpath('//div[@gna-directive-module-directive]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@mod="25"]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@interval="1000"]')).isPresent()).toBe(true);
+  
 		///////////// CLICK TO Service  ///////////
 		var serviceModuleLink = element.all(by.css('li')).get(2);
 		serviceModuleLink.click();
@@ -52,6 +55,9 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		// 2 Checking NAVBAR link as ACTIVE
 		expect(serviceModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 3 Checking that the module is actually PRESENT AT THE CONTENT
+		expect(element(by.xpath('//div[@gna-directive-module-service]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@mod="10000"]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@interval="800"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO Api  ///////////
 		var apiModuleLink = element.all(by.css('li')).get(1);
@@ -62,6 +68,9 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		// 2 Checking NAVBAR link as ACTIVE
 		expect(apiModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 3 Checking that the module is actually PRESENT AT THE CONTENT
+		expect(element(by.xpath('//div[@gna-api]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@mod="2235"]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@interval="500"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO Promise  ///////////
 		var promiseModuleLink = element.all(by.css('li')).get(0);
@@ -72,6 +81,9 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		// 2 Checking NAVBAR link as ACTIVE
 		expect(promiseModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 3 Checking that the module is actually PRESENT AT THE CONTENT
+		expect(element(by.xpath('//div[@gna-promise]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@mod="224435"]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@interval="1500"]')).isPresent()).toBe(true);
 	});
 
 });

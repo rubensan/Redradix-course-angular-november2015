@@ -16,7 +16,7 @@ exports.config = {
         args: ['--window-size=320,800']
        },
 
-       specs: ['e2e/*.js']
+       specs: ['e2e/**/*.js']
     },
     /* SMALL DEVICES */
     {
@@ -25,7 +25,7 @@ exports.config = {
         args: ['--window-size=680,800']
        },
 
-       specs: ['e2e/*.js']
+       specs: ['e2e/**/*.js']
     },
     /* MEDIUM DEVICES */
     {
@@ -34,7 +34,7 @@ exports.config = {
         args: ['--window-size=1280,800']
        },
 
-       specs: ['e2e/*.js']
+       specs: ['e2e/**/*.js']
     }
   ],
 
