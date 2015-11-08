@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 193.57243 202.17923">
+ <defs>
+  <style type="text/css"><![CDATA[
+    .fil0 {fill:#1F1A17}
+   ]]></style>
+  <radialGradient id="radialGradient2915" gradientUnits="userSpaceOnUse" cy="22.801" cx="317.59" gradientTransform="matrix(0,1.0934,-1,3.2082e-7,340.39,-324.44)" r="6.7857">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#999" offset="1"/>
+  </radialGradient>
+  <style type="text/css"><![CDATA[
+    .fil0 {fill:#1F1A17}
+   ]]></style>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(256.07 -486.87)">
+  <g transform="translate(-300.88 128.01)">
+   <g transform="translate(-1.948,-58.402)">
+    <g transform="translate(-104.24,266.35)">
+     <g transform="matrix(-.32643 -.028559 -.028559 .32643 430.85 118.76)">
+      <g stroke-opacity=".83137" fill-opacity=".91905" transform="matrix(.9944 .064064 .064064 .26775 -11.116 127.05)" stroke="#d4d4d4" stroke-width="1.0014">
+       <rect ry="3.5714" height="142.86" width="7.1429" y="46.648" x="465.71" fill="#e9eaea"/>
+       <rect height="200" width="10" y="182.36" x="464.29" fill="#d2d2d2"/>
+      </g>
+     </g>
+     <path id="ng-receiver-right-antenna" d="m277.41 161.33s-0.88623-0.6234-2.316-0.0816-0.83691-5.3509 0.56476-7.316c0.86945-1.2188 2.2716-3.0811 3.7805-2.7327 1.5089 0.34839 1.5841 2.644 1.7917 4.2304 0.31314 2.3932-3.8209 5.8997-3.8209 5.8997z" stroke-opacity=".83137" fill-opacity=".20952" fill-rule="evenodd" stroke="#d4d4d4" stroke-width=".2" fill="#4290ff">
+      <title>Receiver Right Antenna</title>
+     </path>
+     <g transform="matrix(.32768 0 0 .32768 119.16 66.755)">
+      <g transform="matrix(.99619 -.087156 .087156 .99619 -176.21 158.72)">
+       <g stroke-opacity=".83137" fill-opacity=".91905" transform="matrix(.9944 .064064 .064064 .26775 -11.116 127.05)" stroke="#d4d4d4" stroke-width="1.0014">
+        <rect ry="3.5714" height="142.86" width="7.1429" y="47.712" x="477.87" fill="#e9eaea"/>
+        <rect height="200" width="10" y="183.42" x="476.45" fill="#d2d2d2"/>
+       </g>
+      </g>
+      <g transform="matrix(.99619 .087156 -.087156 .99619 17.755 -42.973)">
+       <circle transform="matrix(1.4094,0,0,1.4094,21.87,9.8022)" cy="23.434" cx="317.5" r="0" fill="url(#radialGradient2915)"/>
+      </g>
+      <path d="m169.67 807.4h-29.294l-8 46.589h19.294l18-46.589z" fill="#520"/>
+      <path d="m611.18 807.4h29.294l8 46.589h-19.294l-18-46.589z" fill="#520"/>
+      <path d="m398 332.12c-100.54 0-184.58 28.02-205.25 65.438 13.558-2.7536 28.389-5.6334 44-8.5312 26.19-25.1 88.52-42.78 161.25-42.78 66.131 0 123.66 15.826 153.25 37.345 17.781 3.2323 34.197 6.6791 48.781 10.094-25.17-34.85-106.1-61.57-202.03-61.57z" fill="#4e4634"/>
+      <path d="m124.29 412.36s157.82-43.79 273.57-44.286c140.01-0.59898 273.57 44.286 273.57 44.286s16.429 129.27 16.429 197.86c0 69.286-19.286 197.86-19.286 197.86s-163.57 43.571-277.86 43.571c-131.44 0-277.86-43.571-277.86-43.571s-14.751-94.929-15.714-197.86c-0.80251-85.714 28.571-197.86 27.143-197.86z" fill="#7d2734"/>
+      <path d="m132.33 789.72s-22.314-106.12-22.223-184.35c0.0793-68.178 35.755-176.72 35.755-176.72s108.36-44.222 252.14-43.995c156.64 0.24736 257.59 49.497 257.59 49.497s18.75 116.68 18.183 180.31c-0.71429 80.068-23.234 180.31-23.234 180.31s-127.52 37.88-268.81 37.462c-114.15-0.35-247.38-40.5-249.4-42.52z" stroke-opacity=".25888" fill-opacity=".40952" stroke="#000" stroke-width="4.3579" fill="#dfe1e1"/>
+      <path d="m390.71 391.18c52.921-0.74097 105.57 7.0491 157.58 15.883 57.396 13.826 100.81 63.575 110.5 123.84 9.6886 60.265 11.544 125.59-0.5195 187.03-7.7634 42.352-40.614 74.596-83.391 85.813s-117.03 20.65-187.94 20.89c-70.9 0.25-131.59-10.98-188.24-27.69-56.65-16.7-61.11-43.88-69.01-98.49-6.8067-50.168-8.1799-100.68-2.9164-151.47 5.2635-50.786 19.843-101.47 75.873-124.83 56.03-23.357 131.23-33.802 188.06-30.967z" stroke-opacity=".25888" fill-opacity=".80392" stroke="#000" stroke-width="3.3569" fill="#3a7cd4"/>
+     </g>
+     <g font-family="sans-serif">
+      <text style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="22.5px" y="211.94724" x="179.38429" line-height="125%"><tspan y="211.94724" x="179.38429"/></text>
+      <text id="ng-mod" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="21.6px" line-height="125%" y="235.6073" x="209.37529"><title>Mod</title><tspan y="235.6073" x="209.37529">{{mod}}</tspan></text>
+      <text id="ng-interval" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="21.6px" line-height="125%" y="235.64966" x="282.46939"><title>Interval</title><tspan y="235.64966" x="282.46939">{{interval}}</tspan></text>
+      <text id="ng-random-number" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="72px" line-height="125%" y="302.58215" x="248.50999"><title>Random Number</title><tspan y="302.58215" x="248.50999">{{randomNumber}}</tspan></text>
+      <circle opacity=".9" cx="231.82" cy="324.25" stroke-dashoffset=".27" stroke="#000" r="7.5" stroke-width=".3" fill="#3c61b8"/>
+      <circle id="ng-even" opacity=".9" cy="324.25" cx="231.82" r="7.35" fill="#df7e3e">
+       <title>Even</title>
+      </circle>
+      <path fill-rule="evenodd" fill="#929999" d="m152.5 346.45h191.26c-18.405 2.5961-87.45 4.5863-104.3 4.4976-16.852-0.0887-76.927-2.0924-86.954-4.4976z" fill-opacity=".11675"/>
+     </g>
+     <path id="ng-receiver-left-antenna" d="m218.87 161.33s0.88623-0.6234 2.316-0.0816 0.83691-5.3509-0.56476-7.316c-0.86945-1.2188-2.2716-3.0811-3.7805-2.7327-1.5089 0.34839-1.5841 2.644-1.7917 4.2304-0.31314 2.3932 3.8209 5.8997 3.8209 5.8997z" stroke-opacity=".83137" fill-rule="evenodd" fill-opacity=".20952" stroke="#d4d4d4" stroke-width=".2" fill="#4290ff">
+      <title>Receiver Left Antenna</title>
+     </path>
+     <g font-size="8px" font-family="sans-serif">
+      <text style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" line-height="125%" y="216.62206" x="197.39772"><tspan y="216.62206" x="197.39772">MODULE</tspan></text>
+      <text style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" line-height="125%" y="216.61986" x="262.54361"><tspan y="216.61986" x="262.54361">INTERVAL</tspan></text>
+      <text style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" y="327.05533" x="242.53252" line-height="125%"><tspan y="327.05533" x="242.53252">EVEN</tspan></text>
+     </g>
+     <path d="m277.41 161.33s-0.88623-0.6234-2.316-0.0816-0.83691-5.3509 0.56476-7.316c0.86945-1.2188 2.2716-3.0811 3.7805-2.7327 1.5089 0.34839 1.5841 2.644 1.7917 4.2304 0.31314 2.3932-3.8209 5.8997-3.8209 5.8997z" stroke-opacity=".83137" stroke="#d4d4d4" stroke-width=".2" fill="none">
+      <title>Receiver Right Antenna</title>
+     </path>
+     <path d="m218.87 161.33s0.88623-0.6234 2.316-0.0816 0.83691-5.3509-0.56476-7.316c-0.86945-1.2188-2.2716-3.0811-3.7805-2.7327-1.5089 0.34839-1.5841 2.644-1.7917 4.2304-0.31314 2.3932 3.8209 5.8997 3.8209 5.8997z" stroke-opacity=".83137" stroke="#d4d4d4" stroke-width=".2" fill="none">
+      <title>Receiver Left Antenna</title>
+     </path>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

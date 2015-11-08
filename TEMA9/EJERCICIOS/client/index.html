@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head lang="es">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <base href="/">
+        <title>Angular Course</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="">
+
+        <!-- APP CSS -->
+        <link rel="stylesheet" href="styles/gnas.css">
+        <link rel="stylesheet" href="styles/navbar.css">
+        <link rel="stylesheet" href="styles/footer.css">
+            <!-- COMMON -->
+            <link rel="stylesheet" href="modules/common/messenger/css/messenger.css">
+            <!-- MODULE DIRECTIVES -->
+            <link rel="stylesheet" href="modules/directive/css/gna.css">
+
+    </head>
+
+    <body ng-app="gnasApp">
+
+        <div id="navbar" navbar></div>
+        <div id="content" ng-view></div>
+        <div id="footer" footer></div>
+        
+        <script src="scripts/vendor/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+  
+        <!-- APP SCRIPTS-->
+        <script src="scripts/gnas.js"></script>
+        <script src="scripts/directives.js"></script>
+        <!-- -->      
+
+         <!-- APP MODULES-->
+
+        <!-- COMMON-->
+            <script src="modules/common/messenger/scripts/messenger.js"></script>
+            <script src="modules/common/messenger/scripts/directives.js"></script>
+            <script src="modules/common/messenger/scripts/services.js"></script>
+        
+        <!-- GENERATORS-->
+        <!-- UILOGIC MODULE-->
+        <script src="modules/uilogic/scripts/gna.js"></script>
+        <script src="modules/uilogic/scripts/controllers.js"></script>
+
+        <!-- DIRECTIVE MODULE-->
+        <script src="modules/directive/scripts/gna.js"></script>
+        <script src="modules/directive/scripts/directives.js"></script>
+
+        <!-- SERVICE MODULE-->
+        <script src="modules/service/scripts/gna.js"></script>
+        <script src="modules/service/scripts/directives.js"></script>
+        <script src="modules/service/scripts/services.js"></script>
+        
+        <!-- -->      
+         <!-- API MODULE-->
+        <script src="modules/api/scripts/gna.js"></script>
+        <script src="modules/api/scripts/directives.js"></script>
+        <script src="modules/api/scripts/services.js"></script>
+        <!-- -->      
+
+    </body>
+
+</html>

@@ -1,0 +1,12 @@
+/****
+ Nav
+*****/
+
+#navbar { height: 10%; padding: 0.5em 1.5em 0em 1.5em; border-bottom: solid 2px rgba(242,242,242,0.5); overflow-x: auto; overflow-y: hidden; white-space: nowrap; background: rgba(255,255,255,0.9); }
+#navbar a { transition: all .3s ease-in-out; display: block; color: #fff; text-decoration: none; }
+#navbar a:link { color: black; }
+#navbar a:visited { color: black; }
+#navbar a:hover { color: #58ACFA;  }
+#navbar a:focus { color: #58ACFA; }
+#navbar li { width: auto; margin-right: 5%; display: inline-block; /* if ie7 support needed */ *display: inline; zoom: 1; }
+.link-active { color: #58ACFA; border-bottom: solid #58ACFA 1px; padding-bottom: 0; }
