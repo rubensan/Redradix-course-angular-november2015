@@ -16,6 +16,7 @@ gnasDirectives.directive('navbar', function($location) {
       function init() {
         scope.currentModuleName = $location.path().substring(1);
         scope.modules = [
+          { idLink: 'svg-idLink', title: 'svg', text:'Svg' },
           { idLink: 'promise-idLink', title: 'promise', text:'Promise' },
           { idLink: 'api-idLink', title: 'api', text:'Ext API' },
           { idLink: 'service-idLink', title: 'service', text:'Service' },

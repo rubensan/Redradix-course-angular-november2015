@@ -11,14 +11,15 @@ angular.module('gnasApp', [
 	'gnaAsDirective',	// As Directive Module
 	'gnaWithService',	// Service Module
 	'gnaApi',         // Api Module
-      'gnaPromise'      // Promise Module
+      'gnaPromise',     // Promise Module
+      'gnaSvg'          // Svg Module
 ])
 .config([ '$stateProvider', '$urlRouterProvider', '$locationProvider',
       function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-            $urlRouterProvider.when('/', '/promise');
+            $urlRouterProvider.when('/', '/svg');
 
-            $urlRouterProvider.otherwise("/promise");
+            $urlRouterProvider.otherwise("/svg");
             
             $stateProvider
                 
@@ -26,6 +27,10 @@ angular.module('gnasApp', [
                   // State Configurations //
                   //////////////////////////
                 
+                  .state('svg', {
+                        url: '/svg',
+                        templateUrl : 'modules/generators/svg/views/svg.html' // This is the 'Web Component' Products
+                  })
                   .state('promise', {
                         url: '/promise',
                         templateUrl : 'modules/generators/promise/views/promise.html' // This is the 'Web Component' Products

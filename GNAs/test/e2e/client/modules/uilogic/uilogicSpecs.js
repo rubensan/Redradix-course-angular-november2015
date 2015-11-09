@@ -11,7 +11,7 @@ describe('Module Uilogic', function() {
 		expect(navbar.isDisplayed()).toBe(true);
 
 		///////////// CLICK TO UILogic  ///////////
-		var UILogicModuleLink = element.all(by.css('li')).get(4);
+		var UILogicModuleLink = element.all(by.css('li')).get(5);
 		UILogicModuleLink.click();
 		browser.sleep(1000);
 		// 1 Checking URL
