@@ -44,7 +44,7 @@ gnaPromiseDirectives.directive('gnaPromise', function($interval, $q, gnaPromiseS
           { id: 'service-down', text: 'ERROR', serviceName: SERVICE_ERROR },
           { id: 'service-delay', text: 'DELAY', serviceName: SERVICE_DELAY }
         ];
-        scope.$on('$destroy', function () { $interval.cancel(intervalPromise); }); 
+        scope.$on('$destroy', function () { $interval.cancel(intervalPromise); intervalPromise = undefined; messengerService.popMessage('info', 'Exit Generation', ''); }); 
       }
 
       function allowNewGenerations(){ newGenerationBlocked = false; }

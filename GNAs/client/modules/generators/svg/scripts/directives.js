@@ -47,7 +47,7 @@ gnaSvgDirectives.directive('gnaSvg', function($interval, $q, gnaSvgService, mess
           { id: 'service-down', text: 'ERROR', serviceName: SERVICE_ERROR },
           { id: 'service-delay', text: 'DELAY', serviceName: SERVICE_DELAY }
         ];
-        scope.$on('$destroy', function () { $interval.cancel(intervalSvg); }); 
+        scope.$on('$destroy', function () { $interval.cancel(intervalSvg); intervalSvg = undefined; messengerService.popMessage('info', 'Exit Generation', ''); }); 
       }
 
       function allowNewGenerations(){ newGenerationBlocked = false; }
