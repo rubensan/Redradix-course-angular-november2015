@@ -1,8 +1,0 @@
-#message-container { width: 90%; text-align: center; margin-left: 5%; }
-#message { }
-.info { color: rgba(0, 176, 76, 0.6); }
-.warning { color: #F29512; }
-.error { color: rgba(176, 0, 0, 0.6); }
-
-/* Wide screens */
-@media (min-width: 42em) { #message-container { margin-left: 25%; width: 50%; } }

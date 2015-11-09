@@ -6,7 +6,7 @@ module.exports = function(config){
     files : [
       'client/scripts/vendor/jquery.js',
       'client/bower_components/angular/angular.js',
-      'client/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+      'client/bower_components/angular-route/angular-route.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       'client/scripts/**/*.js',
       'client/views/**/*.html',

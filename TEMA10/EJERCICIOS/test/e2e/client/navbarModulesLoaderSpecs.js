@@ -10,11 +10,11 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		var navbar = element(by.id('navbar'));
 		expect(navbar.isDisplayed()).toBe(true);
 		
-		// At start, promise  module is the one active'
+		// At start, svg  module is the one active'
 		// 1 Checking URL
-		expect(browser.getCurrentUrl()).toContain('/promise');
+		expect(browser.getCurrentUrl()).toContain('/svg');
 		// 2 Going to Manual Module
-		var manualModuleLink = element.all(by.css('li')).get(5);
+		var manualModuleLink = element.all(by.css('li')).get(6);
 		manualModuleLink.click();
 		browser.sleep(1000);
 		// 3 Checking NAVBAR link as ACTIVE
@@ -23,7 +23,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		expect(element(by.css('input[ng-model="randomNumber"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO UILogic  ///////////
-		var UILogicModuleLink = element.all(by.css('li')).get(4);
+		var UILogicModuleLink = element.all(by.css('li')).get(5);
 		UILogicModuleLink.click();
 		browser.sleep(1000);
 		// 1 Checking URL
@@ -34,7 +34,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		expect(element(by.xpath('//div[@ng-controller="gnaUIlogicCtrl"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO Directive  ///////////
-		var directiveModuleLink = element.all(by.css('li')).get(3);
+		var directiveModuleLink = element.all(by.css('li')).get(4);
 		directiveModuleLink.click();
 		browser.sleep(1000);
 		// 1 Checking URL
@@ -47,7 +47,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		expect(element(by.xpath('//div[@interval="1000"]')).isPresent()).toBe(true);
   
 		///////////// CLICK TO Service  ///////////
-		var serviceModuleLink = element.all(by.css('li')).get(2);
+		var serviceModuleLink = element.all(by.css('li')).get(3);
 		serviceModuleLink.click();
 		browser.sleep(1000);
 		// 1 Checking URL
@@ -60,7 +60,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		expect(element(by.xpath('//div[@interval="800"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO Api  ///////////
-		var apiModuleLink = element.all(by.css('li')).get(1);
+		var apiModuleLink = element.all(by.css('li')).get(2);
 		apiModuleLink.click();
 		browser.sleep(1000);
 		// 1 Checking URL
@@ -73,7 +73,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		expect(element(by.xpath('//div[@interval="500"]')).isPresent()).toBe(true);
 
 		///////////// CLICK TO Promise  ///////////
-		var promiseModuleLink = element.all(by.css('li')).get(0);
+		var promiseModuleLink = element.all(by.css('li')).get(1);
 		promiseModuleLink.click();
 		browser.sleep(1000);
 		// 1 Checking URL
@@ -82,6 +82,19 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		expect(promiseModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 3 Checking that the module is actually PRESENT AT THE CONTENT
 		expect(element(by.xpath('//div[@gna-promise]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@mod="224435"]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@interval="1500"]')).isPresent()).toBe(true);
+
+		///////////// CLICK TO svg  ///////////
+		var svgModuleLink = element.all(by.css('li')).get(0);
+		svgModuleLink.click();
+		browser.sleep(1000);
+		// 1 Checking URL
+		expect(browser.getCurrentUrl()).toContain('/svg');
+		// 2 Checking NAVBAR link as ACTIVE
+		expect(svgModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
+		// 3 Checking that the module is actually PRESENT AT THE CONTENT
+		expect(element(by.xpath('//div[@gna-svg]')).isPresent()).toBe(true);
 		expect(element(by.xpath('//div[@mod="224435"]')).isPresent()).toBe(true);
 		expect(element(by.xpath('//div[@interval="1500"]')).isPresent()).toBe(true);
 	});

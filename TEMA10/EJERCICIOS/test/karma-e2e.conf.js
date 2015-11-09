@@ -8,7 +8,7 @@ exports.config = {
     maxInstances: 2
   },*/
 
-  multiCapabilities: [
+	multiCapabilities: [
     /* TINY DEVICES */
     {   
        'browserName': 'chrome',

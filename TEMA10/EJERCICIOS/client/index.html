@@ -17,20 +17,23 @@
             <link rel="stylesheet" href="modules/common/messenger/css/messenger.css">
             <!-- GNAS MODULES -->
             <link rel="stylesheet" href="modules/generators/directive/css/gna.css">
-            <link rel="stylesheet" href="modules/generators/promise/css/service-selector.css">
+            <link rel="stylesheet" href="modules/generators/svg/css/gna.css">
+
+            <!-- VENDOR -->
+            <link rel="stylesheet" href="styles/vendor/animate.css">
 
     </head>
 
     <body ng-app="gnasApp">
 
         <div id="navbar" navbar></div>
-        <div id="content" ui-view></div>
+        <div id="content"><ng-view></ng-view></div>
         <div id="message-container" messenger></div>
         <div id="footer" footer></div>
         
         <script src="scripts/vendor/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
   
         <!-- APP SCRIPTS-->
         <script src="scripts/gnas.js"></script>
@@ -67,6 +70,12 @@
             <script src="modules/generators/promise/scripts/gna.js"></script>
             <script src="modules/generators/promise/scripts/directives.js"></script>
             <script src="modules/generators/promise/scripts/services.js"></script>
+            <!-- -->
+
+            <!-- SVG MODULE-->
+            <script src="modules/generators/svg/scripts/gna.js"></script>
+            <script src="modules/generators/svg/scripts/directives.js"></script>
+            <script src="modules/generators/svg/scripts/services.js"></script>
             <!-- -->
 
     </body>

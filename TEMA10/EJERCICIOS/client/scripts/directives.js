@@ -1,6 +1,6 @@
 var gnasDirectives = angular.module('gnasDirectives', []);
 
-gnasDirectives.directive('navbar', function($location) {
+gnasDirectives.directive('navbar', function($location, $route) {
   return {
     restrict: 'A',  
     scope: {},
@@ -9,13 +9,16 @@ gnasDirectives.directive('navbar', function($location) {
 
       init();
 
-      scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){ 
-        scope.currentModuleName = $location.path().substring(1);
-      })
-      
+      scope.$on("$routeChangeSuccess", function (event, current, previous) {
+        scope.currentModuleName = $location.path().substring(1); 
+      });
+
+      scope.goToModule = function(module) { $location.path(module.title); }
+
       function init() {
         scope.currentModuleName = $location.path().substring(1);
         scope.modules = [
+          { idLink: 'svg-idLink', title: 'svg', text:'Svg' },
           { idLink: 'promise-idLink', title: 'promise', text:'Promise' },
           { idLink: 'api-idLink', title: 'api', text:'Ext API' },
           { idLink: 'service-idLink', title: 'service', text:'Service' },
