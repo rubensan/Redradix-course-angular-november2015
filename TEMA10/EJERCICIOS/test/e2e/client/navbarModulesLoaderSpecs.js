@@ -95,7 +95,7 @@ describe('GNAs - Loading diferent GNA modules Scenario from navbar', function() 
 		expect(svgModuleLink.element(by.css('.link-active')).isPresent()).toBe(true);
 		// 3 Checking that the module is actually PRESENT AT THE CONTENT
 		expect(element(by.xpath('//div[@gna-svg]')).isPresent()).toBe(true);
-		expect(element(by.xpath('//div[@mod="224435"]')).isPresent()).toBe(true);
+		expect(element(by.xpath('//div[@mod="2000"]')).isPresent()).toBe(true);
 		expect(element(by.xpath('//div[@interval="1500"]')).isPresent()).toBe(true);
 	});
 
