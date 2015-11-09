@@ -49,9 +49,9 @@ gnaApiDirectives.directive('gnaApi', function($interval, gnaApiService) {
   };
 });
 
-gnaApiDirectives.directive('foot', function() {
+gnaApiDirectives.directive('footer', function() {
   return {
-    restrict: 'E',
+    restrict: 'A',
     template: '<div> The © Copyright the <a rel="license" href="https://opensource.org/licenses/MIT" target="_blank" style="text-decoration: underline;">MIT license</a> and so on... </div>'
   };
 });

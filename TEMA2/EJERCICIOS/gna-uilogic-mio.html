@@ -8,20 +8,22 @@
                 <title>Angular Course</title>
                 <meta name="description" content="">
                 <meta name="viewport" content="">
-                <!-- CSS -->
-                <link rel="stylesheet" href="../styles/gnas.css">
+
+                <link rel="stylesheet" href="./styles/gnas.css">
         </head>
 
         <body ng-app="gnaUIlogic">
 
-                <div id="gna-container"> 
-                        <div class="btn title">Generar Numero Aleatorio</div>
-                        <h3 class="number"> {{randomNumber}} </h3>
+                <div id="content">
+                        <div id="gna-container" ng-controller="gnaUIlogicCtrl"> 
+                                <div class="btn title">Generar Numero Aleatorio</div>
+                                <h3 class="number"> {{randomNumber}} </h3>
+                        </div>
                 </div>
 
-                <script src="scripts/vendor/angular.js"></script>
+                <script src="./scripts/vendor/angular.js"></script>
                 <script>
-                        
+                                
                         /******** Aqui tu APP. Añade tu controlador *******/
 
                         var gnaUIlogic = angular.module('gnaUIlogic', []);     
@@ -29,6 +31,5 @@
                         /**************************************************/
 
                 </script>
-        
-	</body>
+        </body>
 </html>
