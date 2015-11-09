@@ -4,8 +4,12 @@
 # Description:
 
  * This project contains all the material that will be used during the course.
- * Theory and exercises grouped by subject
- * Run npm install for installing node apps, node server.js for starting the server, npm test for running Unit tests and npm run protractor to run the E2E ones.
+ * Theory and exercises grouped by subject.
+ * TEMA11 is a Web project grouped by features.
+ * Run `npm install` in order to install the app.
+ * Run `node server.js` in order to start the server.
+ * Run `npm test` in order to run the unit tests.
+ * Run `npm run protractor` in order to run the e2e tests.
 
 # Goals
 
